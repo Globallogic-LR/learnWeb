@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module Pattern</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+ 
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+var Module = (function(){
+
+	var privateMethod = function(msg){
+		console.log(msg)
+	};
+	var publicMethod = function(text){
+		privateMethod(text)
+	};
+
+
+	return {
+		publicMethod: publicMethod
+	}
+})();
+
+Module.publicMethod('Doing Module Practice'); // Doing Module Practice;
+
+// But if you want to add some other public method into Module also we can do.
+
+var ModuleTwo = (function(Module){
+	Module.extended = function(){
+		console.log('Now extended')
+	};
+
+	return Module
+	
+})(Module || {})
+
+console.log(Module)
+
+</script>
+
+</body>
+</html>
