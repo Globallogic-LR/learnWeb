@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototypal Inheritance</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+ 
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+/** Prototype inheritance **/
+
+function Employee (name) {
+	this.name = name;
+}
+
+Employee.prototype.getName = function(){
+	return this.name;
+}
+
+function PermamentEmp(annualSalary){
+	this.annualSalary = annualSalary;
+}
+
+var employee = new Employee('John')
+
+
+PermamentEmp.prototype = employee;
+
+var employees = new PermamentEmp(5000)
+
+console.log(employees.getName())// John
+
+console.log(employees.annualSalary) // 5000
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
