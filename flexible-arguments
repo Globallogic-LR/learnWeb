@@ -1,0 +1,34 @@
+
+<h2>Flexible-Arguments</h2>
+	<script>
+	function testArgs(){
+		 var args = arguments,
+		 param = args[0],
+		 type = Object.prototype.toString.call(param);
+		 console.log('number of in param: '+args.length);
+		 console.log('type of first param: '+type);
+	}
+	testArgs('one');
+						//ans:
+						//number of in param: 1
+						//type of first param: [object String]
+	testArgs(25, 15, 52, 45, 18);
+	//ans: 
+	//number of in param: 5
+	//type of first param: [object Number
+
+
+	/********Add function with flexible arguments******/
+
+	function add(){						//function declaration
+		 var sum = 0,
+		 arg = arguments;
+		 for(var i =0; i< arg.length; i++){		//iteration till  the number of params
+		 sum += arg[i];
+	 }
+	 return sum;
+	}
+		add(1, 2, 5, 22); 					//ans: 30
+	add(1, 2); 							//ans: 3
+	add(4, 8, 15, 16, 23, 42)); 		//ans: 108
+	</script>
