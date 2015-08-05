@@ -1,0 +1,36 @@
+<h2>ECMAScript 5 ( prevent extensions and is extensions)</h2>
+
+<script>
+var obj = {};
+undefined
+obj.name = "Dani";
+"Dani"
+alert(Object.isExtensible(obj));
+//undefined
+alert(Object.isExtensible(obj));
+//undefined
+alert(Object.isExtensible(obj.name));
+//undefined
+obj.isPrototypeOf()
+//false
+obj.propertyIsEnumerable()
+//false
+Object.preventExtensions(obj);
+
+obj.url = "http://ejohn.org/";
+//"http://ejohn.org/"
+alert(Object.isExtensible(obj));
+//undefined
+      
+{ value = "sxyhsxb", writable = true, enumerable = true, configurable =  true }
+//true
+{ value = "sxyhsxb", writable = true, enumerable = true, configurable =  true }
+//true
+
+Object.getOwnPropertyDescriptor(obj, name);
+console.log(JSON.stringify(Object.getOwnPropertyDescriptor(obj, "name")));
+//VM948:2 {"value":"Dani","writable":true,"enumerable":true,"configurable":true}
+var obj = { foo: "test" };
+console.log(JSON.stringify(Object.getOwnPropertyDescriptor(obj, "foo")));
+//VM980:2 {"value":"test","writable":true,"enumerable":true,"configurable":true}
+</script>
