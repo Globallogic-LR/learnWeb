@@ -1,0 +1,20 @@
+<h2>Type-casting</h2>
+
+Type casting allows you to access a specific value as if it were of a different type
+
+<script>
+var n = 30;  
+var m = 70;		
+typeof n
+"number"
+var s = new String();
+s = String(n) + String(m); //"3070"
+s = Number(n) + Number(m); 100
+var n = 50;
+var b = Boolean(n);
+b;		//true as it value is other from null or zero
+var c = Boolean(n-50);
+c;		//false as c is null 
+Number (undefined); //NaN
+Number ("5.6.7"); //NaN
+</script>
