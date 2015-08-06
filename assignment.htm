@@ -1,73 +1,62 @@
 <html>
 
 <head>
-	
-	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
-	<script type="text/javascript" src="jquery-2.1.4.js"></script>
-	<script type="text/javascript" src="javascripts/mainScript.js"></script>
-
 </head>
 
-
 <div class="main-container">
-	
-	<div class="side-bar">
-			<div class="search-box">
-				<input type="text" class="input-search-box"></input>
-				<button class="btn-search-box">Search</button>
-			</div>
+<div class="side-bar">
+	<div class="search-box">
+		<input type="text" class="input-search-box"></input>
+		<button class="btn-search-box">Search</button>
+	</div>
 
-			<div class="dashboard">
-				<label class="lbl-dashboard-main">Dashboard</label>
-				<hr class="hr-dashboard">
-				<label class="lbl-dashboard-campaign-tab">Campaign</label>
-				<hr class="hr-dashboard">
-				<label class="lbl-dashboard">Account</label>
-				<hr class="hr-dashboard">
-				<label class="lbl-dashboard">Users</label>
-				<hr class="hr-dashboard">
-				<label class="lbl-dashboard">Downloads</label>
-				<hr class="hr-dashboard">
-				<label class="lbl-dashboard">Sales</label>
-			</div>
-	 </div>
-
-	 <div class="main-bar">
-	 		<div class="breadcrumb-bar">
-	 		<label class="lbl-mainbar-dashboard">DASHBOARD</label>
-	 			
-	 		</div>
-
-	 		<div class="campaign-list">
-
-	 			<div class="campaign-label-row">
-	 				<label class="lbl-recent-campaign">Recent Campaigns</label>
-	 				<label class="lbl-showall" id = "lblShowAll">Show All</label>
-	 				<div class="campaign-separator">|</div>
-	 				<label class="lbl-update" id = "lblUpdate">Update</label>
-	 				
-	 			</div>
-
-	 			<div class="campaign-field-row">
-
-	 			<ul class="campaign-field-list">
-	 				<li>Name</li>
-	 				<li>Date Created</li>
-	 				<li>Last Updated</li>
-	 				<li>Total Views</li>
-	 				<li>Sales</li>
-	 				<li>End Date</li>
-	 			</ul>
-	 				
-	 			</div>
-
-	 			<div id="campaignDataTable" class="campaign-data-table">
-	 				
-	 			</div>
-	 			
-	 		</div>
-	 </div>
-
+	<div class="dashboard">
+		<span class="lbl-dashboard lbl-dashboard-main">Dashboard</span>
+		
+		<span class="lbl-dashboard lbl-dashboard-campaign-tab">Campaign</span>
+		
+		<span class="lbl-dashboard">Account</span>
+		
+		<span class="lbl-dashboard">Users</span>
+		
+		<span class="lbl-dashboard">Downloads</span>
+		
+		<span class="lbl-dashboard">Sales</span>
+	</div>
 </div>
+
+<div class="main-bar">
+		<div class="breadcrumb-bar">
+		<span class="lbl-mainbar-dashboard">DASHBOARD</span>
+		</div>
+
+		<div class="campaign-list">
+			<div class="campaign-label-row">
+				<span class="lbl-recent-campaign">Recent Campaigns</span>
+				<button class="lbl-showall" id = "lblShowAll">Show All</button>
+				<button class="lbl-update" id = "lblUpdate">Update</button>	
+			</div>
+
+			<div class="campaign-field-row">
+			<ul class="campaign-field-list">
+				<li>Name</li>
+				<li>Date Created</li>
+				<li>Last Updated</li>
+				<li>Total Views</li>
+				<li>Sales</li>
+				<li>End Date</li>
+			</ul> 				
+			</div>
+
+			<div id="campaignDataTable" class="campaign-data-table">		
+			</div>
+			
+		</div>
+</div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<script type="text/javascript" src="javascripts/mainScript.js"></script>
 
 </html>
