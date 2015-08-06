@@ -35,7 +35,7 @@
 				<div class="headbtn">
 					<p>	Recent Campaigns </p>
 					<input class="btn" id="Update" type="button" value="Update" onclick="updateSearch()">
-					<input class="btn" id="Showall" type="button" value="Show All" onclick="show()">
+					<input class="btn" id="Showall" type="button" value="Show All" onclick="two()">
 				</div>
 				<div class="table">
 					<ul>
@@ -62,6 +62,7 @@
             <li id = "update-endDate">
             </li>
 				</ul>
+        <hr />
 			</div>
 		    </div>
 		</div>
@@ -72,13 +73,13 @@
  data = [
  {"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}];
 
-  console.log(data);
+  //console.log(data);
   var d = data.length;
-  console.log(d);
+  //console.log(d);
 
   function updateSearch(){
-  alert("vcmkvn");
-  var j;
+  //alert("vcmkvn");
+  var ij;
 for (var j = 0; j <= 11 ; j++) {
   alert("cmnxcn");
   }
@@ -86,7 +87,7 @@ for (var j = 0; j <= 11 ; j++) {
 
 
 function show(){
-  alert("ckn");
+  //alert("ckn");
    for (var i = 0; i <= data.length; i++) {
     console.log(data[i]);
   document.getElementById("update-name").innerHTML = data[i].name;
@@ -97,6 +98,26 @@ function show(){
   document.getElementById("update-endDate").innerHTML = data[i].endDate;
 }
 };
+
+function addUl(){
+  //console.log("cndjvn");
+var list = document.createElement('ul');
+//console.log("vjndiv");
+
+for (var i = 0; i < data.length; i++) {
+  //console.log(i);
+  var item = document.createElement('li');
+  item.appendChild(document.createTextNode(data[i]));
+  list.appendChild(item);
+  alert(list);
+};
+}
+
+function two(){
+  show();
+  addUl();
+}
+
 
 </script>
 	</body>		
