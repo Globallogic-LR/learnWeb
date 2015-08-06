@@ -1,0 +1,103 @@
+<html>
+	<head>
+<link rel="stylesheet" type="text/css" href="stylestr.css">
+
+</head>
+	<body>
+	<div class="container">
+		<div class="left">
+			<div class="search">
+				<input type="search" id="searchform" placeholder="Search here..." name="search">
+				<input type="submit" id="searchbtn" value="SEARCH">
+
+			</div>
+			<div class="dashboard">
+				<h2>dashboard</h2>
+				<ul class="navleft">
+					<li class="txt2">Campaigns</li>
+					<li>Account</li>
+					<li>Users</li>
+					<li>Downloads</li>
+					<li>Sales</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="right">
+			<div class="breadcrumb">
+		<ul>
+		  <li>DASHBOARD</li>
+		  <li>Campaigns</li>
+		</ul>
+			</div>
+			<div class="maintable">
+				<div class="headbtn">
+					<p>	Recent Campaigns </p>
+					<input class="btn" id="Update" type="button" value="Update" onclick="updateSearch()">
+					<input class="btn" id="Showall" type="button" value="Show All" onclick="show()">
+				</div>
+				<div class="table">
+					<ul>
+	                  <li>Name</li>
+	                  <li>Date Created</li>
+	                  <li>Last Updated</li>
+	                  <li>Total views</li>
+	                  <li>Sales</li> 
+	                  <li>End Date</li>
+	              	</ul>
+				</div>
+					<div class="dataTable"> 
+				<ul id = "update-full">
+					  <li id = "update-name">
+					  </li>
+            <li id = "update-dateCreated">
+            </li>
+            <li id = "update-lastUpdated">
+            </li>
+            <li id = "update-totalViews">
+            </li>
+            <li id = "update-sales">
+            </li>
+            <li id = "update-endDate">
+            </li>
+				</ul>
+			</div>
+		    </div>
+		</div>
+	</div>
+<script>
+
+
+ data = [
+ {"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}];
+
+  console.log(data);
+  var d = data.length;
+  console.log(d);
+
+  function updateSearch(){
+  alert("vcmkvn");
+  var j;
+for (var j = 0; j <= 11 ; j++) {
+  alert("cmnxcn");
+  }
+};
+
+
+function show(){
+  alert("ckn");
+   for (var i = 0; i <= data.length; i++) {
+    console.log(data[i]);
+  document.getElementById("update-name").innerHTML = data[i].name;
+  document.getElementById("update-dateCreated").innerHTML = data[i].dateCreated;
+  document.getElementById("update-lastUpdated").innerHTML = data[i].lastUpdated;
+  document.getElementById("update-totalViews").innerHTML = data[i].totalViews;
+  document.getElementById("update-sales").innerHTML = data[i].sales;
+  document.getElementById("update-endDate").innerHTML = data[i].endDate;
+}
+};
+
+</script>
+	</body>		
+</html>
