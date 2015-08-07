@@ -1,0 +1,38 @@
+{
+    "thead": [
+        "Name",
+        "Date Created ",
+        "Last Updated",
+        "Total Views",
+        "Sales",
+        "End Date"
+    ],
+    "tbody": [
+        {
+            "id": 0,
+            "name": "Campaing name 1",
+            "dateCreated": "12 DEC 2014",
+            "dateUpdated": "18 DEC 2014",
+            "totalView": "5 K",
+            "sales": "100 units",
+            "endDate": "31 DEC 2014"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]
+}
