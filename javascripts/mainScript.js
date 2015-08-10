@@ -60,7 +60,9 @@ for(var i=currentIndex; i<myCampaignData.length ;i++){
 
 }
 
-document.getElementById("lblShowAll").addEventListener("click", function(){
+var showAllElem = document.getElementById("lblShowAll");
+
+showAllElem.addEventListener("click", function(){
 
 	if(!showAllFlag){
 	currentIndex = 0;
@@ -69,7 +71,8 @@ document.getElementById("lblShowAll").addEventListener("click", function(){
 initialLoad(false);
 });
 
-document.getElementById("lblUpdate").addEventListener("click", function(){
+var updateElem = document.getElementById("lblUpdate");
+updateElem.addEventListener("click", function(){
 
 if(currentIndex === myCampaignData.length){
 	alert("Data is already upto date");
