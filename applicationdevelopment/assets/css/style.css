@@ -67,10 +67,12 @@ table {
 }
 .sorting { 
 	background: url("../images/sort-both.png") bottom right no-repeat;
+	background-position: 95% 15px;
 }
 .table-data th {
 	font-size: 16px;
 	font-weight: normal;
+	cursor: pointer;
 }
 .table-data td, .table-data th { 
 	padding: 8px 10px;

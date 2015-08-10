@@ -1,38 +1,166 @@
 {
-    "thead": [
-        "Name",
-        "Date Created ",
-        "Last Updated",
-        "Total Views",
-        "Sales",
-        "End Date"
-    ],
-    "tbody": [
+    "items":
         {
-            "id": 0,
-            "name": "Campaing name 1",
-            "dateCreated": "12 DEC 2014",
-            "dateUpdated": "18 DEC 2014",
-            "totalView": "5 K",
-            "sales": "100 units",
-            "endDate": "31 DEC 2014"
+            "item":
+                [
+                    {
+                        "name": "Edited the Search criteria",
+                        "description": "TC6 Global Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Adited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    },
+                    {
+                        "name": "Bdited the Search criteria",
+                        "description": "TC6 Owner Admin",
+                        "ownerName": "LogRhythmAdmin",
+                        "readPermissions": "Private",
+                    }
+
+
+                ]
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ]
 }
