@@ -61,7 +61,6 @@ background-color: white;
 padding: 6px 0px 6px 3px;
 width: 237px;
 background-color: #a0a0a0;
-overflow: hidden;
 }
 
 /*.search-box:after {
@@ -72,17 +71,16 @@ overflow: hidden;
 }*/
 
 .input-search-box{
-padding: 0;
-float: left;
+padding: 0px;
+margin-right: -4px;
 }
 
 .btn-search-box{
 background-color: #d83c3c;
 width: 56px;
-height: 19px;
+height: 18px;
 border: none;
-padding: 0;
-float: left;
+padding: 0px;
 }
 
 .dashboard{
@@ -95,21 +93,25 @@ background-color: #a0a0a0;
 margin-top: 2px;
 }
 
-span.lbl-dashboard-main{
-padding:32 0 12 0px;
+.dashboard>ul{
+width: 100%;
+}
+
+#listItemDashboardMain.lbl-dashboard-main{
+padding:32px 0px 12px 0px;
 color: white;
 font-size: 20px;
 margin: 0px;
 border-bottom: 0px white;
 }
 
-span.lbl-dashboard-campaign-tab{
+#listItemDashboardCampaignTab.lbl-dashboard-campaign-tab{
 width: 97%;
 background-color:white;
 border-right: 6px solid #d83c3c;
 border-bottom: 0px white;
 text-align: center;
-padding: 12 0 7 0px;
+padding: 12px 0px 7px 0px;
 color: #c5c3c3;
 margin:0px;
 }
@@ -120,7 +122,7 @@ color: #c5c3c3;
 border-bottom: 1px solid white;
 text-align: center;
 width: 100%;
-padding: 10 0 7 0px;
+padding: 10px 0px 7px 0px;
 }
 
 /*right side bar starts here*/
