@@ -1,166 +1,163 @@
 {
-    "items":
-        {
-            "item":
+    "tableData":
                 [
                     {
                         "name": "Edited the Search criteria",
                         "description": "TC6 Global Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Adited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     },
                     {
                         "name": "Bdited the Search criteria",
                         "description": "TC6 Owner Admin",
                         "ownerName": "LogRhythmAdmin",
-                        "readPermissions": "Private",
+                        "readPermissions": "Private"
                     }
 
 
                 ]
-        }
 }
