@@ -12,15 +12,15 @@
 <div class="wrapper">
     <div class="tab-navi">
         <ul class="clearfix">
-            <li class="active"><a href="#">All Saved </a></li>
-            <li><a href="#">Shared Searches </a></li>
-            <li><a href="#">My Saved </a></li>
-            <li><a href="#">My Recent</a></li>
+            <li class="active"><a href="#" data-id="all-saved">All Saved </a></li>
+            <li><a href="#" data-id="shared">Shared Searches </a></li>
+            <li><a href="#" data-id="my-saved">My Saved </a></li>
+            <li><a href="#" data-id="my-recent">My Recent</a></li>
         </ul>
     </div>
     <div class="content-wrapper">
         <div class="" id="all-saved">
-            <table class="table-data">
+            <!-- <table class="table-data">
                 <thead>
                     <tr>
                         <th rowspan="2">Actions </th>
@@ -36,45 +36,84 @@
                         <th><input type="text" name="rPerm"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="data-table">
                     <tr>
-                        <td>
-                            <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                        <td>                            
+                            <div class="cell">
+                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                            </div>
+                            <div class="cell">
+                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                            </div>
+                            <div class="cell">
+                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                            </div>
                         </td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                        <td class="data-column">
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
                         </td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                            <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                        <td class="data-column"> 
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
                         </td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
-                        <td>sdf</td>
+                        <td class="data-column">
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                        </td>
+                        <td class="data-column">
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                            <div class="cell">sdfdsf</div>
+                        </td>
                     </tr>
+                    
+                    
                 </tbody>
-            </table>
+            </table> -->
+            <div class="data-table">
+                <div class="tbody">
+                    <div class="col action-col">
+                        <div class="cell">Action</div>
+                    </div>
+                    <div class="col col-name">
+                        <div class="cell sorting">Name</div>
+                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
+                    </div>
+                    <div class="col col-des">
+                        <div class="cell sorting">Description</div>
+                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
+                    </div>
+                    <div class="col col-owner">
+                        <div class="cell sorting">Owner Name</div>
+                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
+                    </div> 
+                    <div class="col col-perm">
+                        <div class="cell sorting">Read Permissions</div>
+                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <!-- Still in progress -->
+        <div id="shared"></div>
+        <div id="my-saved"></div>
+        <div id="my-recent"></div>
     </div>
 </div>
+
+
 
 <script type="text/javascript" src="app/js/libs/jquery.min.js"></script>
 <script type="text/javascript" src="app/js/app.js"></script>

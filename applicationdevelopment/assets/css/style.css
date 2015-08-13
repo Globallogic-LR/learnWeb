@@ -68,19 +68,34 @@ table {
 .sorting { 
 	background: url("../images/sort-both.png") bottom right no-repeat;
 	background-position: 95% 15px;
+	cursor: pointer;
 }
-.table-data th {
+.data-table .tbody {
+	display: table;
+	width: 100%;
+}
+.data-table .tbody .col {
+	display: table-cell;
+}
+.table-data th  {
 	font-size: 16px;
 	font-weight: normal;
 	cursor: pointer;
 }
-.table-data td, .table-data th { 
+.table-data th, .data-table .cell { 
 	padding: 8px 10px;
 	vertical-align: top;
 	border: 1px solid #d8d8d8;
 	text-align: left;
+	min-height: 38px;
 }
-.table-data th input {
+.action-col .cell:first-child {
+	min-height: 76px;
+}
+.data-table .input-cell {
+	padding: 0;
+}
+.table-data th input, .data-table .cell input {
 	width: 100%;
 	border: none;
 	padding: 8px 10px;
@@ -89,7 +104,7 @@ table {
 .table-data thead tr:nth-child(2) th {
 	padding: 0;
 }
-.table-data tbody td a {
+.table-data tbody td a, .data-table .cell a {
 	margin-right: 10px;
 	font-size: 12px;
 	color: inherit;
@@ -100,11 +115,11 @@ table {
 .table-data tbody td:first-child {
 	width: 95px;
 }
-.table-data tr:nth-child(odd) {
+.table-data tr:nth-child(odd), .data-table .cell:nth-child(odd) {
     background-color: #e5e5e5;
     /*border-bottom: 1px solid #d8d8d8;*/
 }
-.table-data tr:nth-child(even) {
+.table-data tr:nth-child(even), .data-table .cell:nth-child(even) {
     background-color: #f0f0f0;
     /*border-bottom: 1px solid #d8d8d8;*/
 }
