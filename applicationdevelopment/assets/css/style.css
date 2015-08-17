@@ -52,7 +52,11 @@ table {
     text-decoration: none;
     background: linear-gradient(rgba(0, 0, 0, 0), #afafaf);
     transition: all 0.4s;
+    outline: none;
 } 
+.tab-navi ul > li > a:active, .tab-navi ul > li > a:focus{
+	outline: none;
+}
 .tab-navi ul > li.active > a {
 	background: linear-gradient(#ffffff, #e5e5e5);
 	cursor: default;
@@ -61,7 +65,16 @@ table {
 	background: #afafaf;
 }
 
+.content-wrapper {
+	background-color: #e5e5e5;
+}
 
+.tab-content {
+	display: none;
+}
+.tab-content.active{
+	display: block;
+}
 .table-data {
 	width: 100%;
 }
@@ -101,6 +114,14 @@ table {
 	padding: 8px 10px;
 	font-size: 14px;
 }
+.edit-input { display: none;}
+.data-table .cell.active span.content {
+	display: none;
+}
+.data-table .cell.active input.edit-input {
+	display: block;
+}
+
 .table-data thead tr:nth-child(2) th {
 	padding: 0;
 }

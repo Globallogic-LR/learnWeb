@@ -1,8 +1,7 @@
 
 var assService = {
     getData: function(){
-        var promise = $.getJSON('app/json/data.json');
-        return promise;
+        return $.getJSON('app/json/data.json');;
     }
 }
 
@@ -10,10 +9,19 @@ var assService = {
 var AppModel = function(data){
     this.items = data || [];
 
-    this.name = [];
-    this.des = [];
-    this.ownName = [];
-    this.readPer = [];
+    // this.name = [];
+    // this.des = [];
+    // this.ownName = [];
+    // this.readPer = [];
+
+    this.columnsHdr = ['Name', 'Description', 'Owner Name', 'Read Permissions']
+    this.columnsData = {
+        'name': [],
+        'des': [],
+        'ownName': [],
+        'readPer':[]
+    } 
+    
  }
 
  AppModel.prototype = {
@@ -30,11 +38,23 @@ var AppModel = function(data){
     },
     setColData: function(name, des){
         var _items = this.getItems()
+
        for(key in _items){
-            this.name.push(_items[key].name)
-            this.des.push(_items[key].description)
-            this.ownName.push(_items[key].ownerName)
-            this.readPer.push(_items[key].readPermissions)
+            
+            if(this.columnsData.name){
+                this.columnsData.name.push(_items[key].name)
+            }
+            if(this.columnsData.des){
+
+                this.columnsData.des.push(_items[key].description)
+           }
+            if(this.columnsData.ownName){
+                this.columnsData.ownName.push(_items[key].ownerName)
+            }
+            if(this.columnsData.readPer){
+                this.columnsData.readPer.push(_items[key].readPermissions)
+            }
+            
        }
     }
  }
@@ -42,7 +62,6 @@ var AppModel = function(data){
 var AppView = function(model, elements){
     this.model = model;
     this.elements = elements;
-    var that = this;
 }
 
 AppView.prototype = {
@@ -50,57 +69,98 @@ AppView.prototype = {
         this.rebuildList()
     },
     rebuildList: function(){
-        this.model.setColData('sdfsdf', 'rrrrr')
-        var nameObj = this.model.name,
-            desObj = this.model.des,
-            ownNameObj = this.model.ownName,
-            readPerObj = this.model.readPer;
+        this.model.setColData()
 
-        var dataCol = this.elements.colName,
-            colDes = this.elements.colDes,
-            colOwner = this.elements.colOwner,
-            colPerm = this.elements.colPerm,
-            actionCol = this.elements.actionCol;
+        // All elements
+        var tbody = this.elements.tbody,
+            actionCol = this.elements.actionCol,
+            colDes = this.elements.colDes;
 
-         
-        var htmlAction = '<div class="cell">\
+        var   htmlAction = '<div class="cell">\
                         <a href="#"><i class="glyphicon glyphicon-play"></i></a>\
-                        <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>\
-                        <a href="#"><i class="glyphicon glyphicon-trash"></i></a>\
+                        <a href="#" class="edit"><i class="glyphicon glyphicon-pencil"></i></a>\
+                        <a href="#" class="delete"><i class="glyphicon glyphicon-trash"></i></a>\
                     </div>'
 
 
-        for(var i in nameObj){
-            dataCol.append('<div class="cell data-cell">\
-                '+nameObj[i]+'\
-                </div>');
-            actionCol.append(htmlAction)
-        }
-        for(var i in desObj){
-            colDes.append('<div class="cell data-cell">\
-                '+desObj[i]+'\
-                </div>')
-        }
+        var id = -1;
 
-        for(var i in ownNameObj){
-            colOwner.append('<div class="cell data-cell">\
-                '+ownNameObj[i]+'\
-                </div>')
-        }
+        for(var j in this.model.columnsData){
+             id++
+             tbody.append('<div class="col col-des">\
+                         <div class="cell sorting">'+this.model.columnsHdr[id]+'</div>\
+                         <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>\
+                     </div>');
 
-        for(var i in readPerObj){
-            colPerm.append('<div class="cell data-cell">\
-                '+readPerObj[i]+'\
-                </div>')
+
+            for(var i in this.model.columnsData[j]){
+                actionCol.eq(id).append(htmlAction)
+                tbody.find(colDes).eq(id).append('<div class="cell"><span class="content">'+this.model.columnsData[j][i]+'</span> <input type="text" class="input edit-input" value="'+this.model.columnsData[j][i]+'"></div>')
+            }
         }
-      
         
     }
 }
 
-var AppController = function(){
+
+
+var AppController = function(view){
+    this.model = view.model;
+    this.elements = view.elements;
+    this.view = view;
+    var that = this;
+
+    // this.elements.tabNavi.click(that.clickOn) through this way unable to access model
+
+    this.elements.tabNavi.click(function(){
+        that.clickOnTab(this)
+    });
+    
+
+
+
+    $(document).on('click',this.elements.edit, function(){
+        that.editClick($(this), that.view)
+    });
+}
+
+AppController.prototype = {
+    clickOnTab: function(evt){
+       var currentTab = $(evt).data('id');
+       // Add and Remove class on tab
+       
+       this.elements.tabNavi.parents('ul').find('li').removeClass('active')
+       $(this).parent().addClass('active')
+
+       // // Add and Remove class on tab content
+       this.elements.tabContent.removeClass('active');
+       $('#'+currentTab+'').addClass('active')
+    },
+    editClick: function(currentEdit, view){
+        var currentId = currentEdit.parent().index()
+        var allItems = this.model.getItems();
+
+        console.log(allItems[currentId-1])
+        //allItems[currentId-1].name = '0000'
+        
+        //view.show()
+
+        var that = this;
+        
+        $(this.elements.colDes).each(function(i){
+            $(this).find(that.elements.cell).eq(currentId+1).addClass('active')
+        })
+    }
+    
+
 
 }
+
+
+
+
+
+
 
 var model,
     view;
@@ -108,14 +168,21 @@ assService.getData().then(function(data){
     model = new AppModel(data);
     veiw = new AppView(model, {
         'dataTable': $('.data-table'),
-        'tbody': $('.tbody'),
+        'tbody': $('.data-table .tbody'),
         'actionCol': $('.action-col'),
-        'colName': $('.data-table .col-name'),
-        'colDes': $('.data-table .col-des'),
-        'colOwner': $('.data-table .col-owner'),
-        'colPerm': $('.data-table .col-perm'),
-        'cell': $('.data-table .data-cell')
+        'colDes': '.col-des',
+        'cell': '.cell',
+        'editInput' : '.edit-input',
+
+        'tabNavi' : $('.tab-navi li a'),
+        'tabContent': $('.tab-content'),
+
+        'edit': '.edit',
+        'del': '.delete'
+
     });
+
+    controller = new AppController(veiw)
 
     veiw.show()
     
