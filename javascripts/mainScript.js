@@ -26,9 +26,9 @@ $(document).ready(function(){
 	}
 
 	function getLiWithData(listObjectData){
-		var elem1 = document.createElement("li");
-		elem1.textContent  = listObjectData;
-		return elem1;
+		var liElem = document.createElement("li");
+		liElem.textContent  = listObjectData;
+		return liElem;
 	}
 
 	var $showAllElem = document.getElementById("lblShowAll");
