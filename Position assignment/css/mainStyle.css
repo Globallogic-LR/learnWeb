@@ -45,39 +45,36 @@ border-spacing: 0;
 
 /*Reset CSS end*/
 
-@font-face{
-	font-family: "Bitstream Vera Serif Bold";
+@font-face {
+    font-family: "Bitstream Vera Serif Bold";
     src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
     font-style: italic;
     font-weight: 900;
 }
-
-.side-bar{
-position: relative;
-border:2px solid gray;
-top: 200px;
-left: 200px;
-height: 100px;
-width: 100px;
-border-radius: 10px 30px;
-box-shadow: inset 2px 2px 5px black;
+.side-bar {
+    position: relative;
+    border: 2px solid gray;
+    top: 200px;
+    left: 200px;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px 30px;
+    box-shadow: inset 2px 2px 5px black;
 }
-
-.dashboard{
-position: absolute;
-border:2px solid red;
-top: 40px;
-left: 100%;
-height: 20px;
-width: 20px;
+.dashboard {
+    position: absolute;
+    border: 2px solid red;
+    top: 40px;
+    left: 100%;
+    height: 20px;
+    width: 20px;
 }
-
-.dashboard-second{
-font-family: "Bitstream Vera Serif Bold";
-position: absolute;
-border:2px solid red;
-top: 40px;
-left: -24px;
-height: 20px;
-width: 20px;
+.dashboard-second {
+    font-family: "Bitstream Vera Serif Bold";
+    position: absolute;
+    border: 2px solid red;
+    top: 40px;
+    left: -24px;
+    height: 20px;
+    width: 20px;
 }
