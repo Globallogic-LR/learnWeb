@@ -3,12 +3,14 @@
 	width: 980px;
     margin: auto;
 	}
+
 .nav-list{
     margin: auto;
     background-color: #D9D9D9;
-    /* height: 35px; */
-    /* line-height: 35px; */
+    height: 35px;
     overflow: hidden;
+    padding: 0px;
+
     }
 .nav-list li{
 	/* list-style-position: inside; */
@@ -26,11 +28,13 @@
 .nav-list li a{
 	text-decoration: none;
 	color: black;
-	text-shadow: 0.2px 0.3px white;
+	text-shadow: 0.2px 0.3px rgba(171, 168, 168, 0.4);
 	font-family: monospace;
+  display: block;
+
 
 }
-.nav-list  .active{
+.nav-list .active{
 
 	    background-color: hsla(355,88%,100%,0.9);
 	    border-bottom: none;
@@ -46,7 +50,7 @@
    overflow: scroll;
     background-color: #F7F7F7;
 }
-.table-head{
+.table-head, .data-show{
 
 	    width: 100%;
 }
@@ -60,20 +64,26 @@ td{
 	border-left: none;
 	border-top: none;
 
+
 }
 
 .glyphicon{
 	color: dimgray;
 	margin: auto;
+  font-size: 10px;
 }
-.table-head tr:nth-child(even){
+.data-show tr:nth-child(odd){
 	    background-color: white;
 }
 .main-row td{
 
-  padding: 10px;
+  padding-bottom: 10px;
   position: relative;
   vertical-align: top;
+  padding-left: 10px;
+  font-family: monospace;
+    font-weight: bold;
+    color: grey;
 
 }
 .search-row input{
@@ -90,7 +100,7 @@ width: 10px;
 }
 .gly{
 
-  font-size: 8px;
+  font-size: 6px;
   }
   .glyphicon-triangle-top{
   
@@ -103,4 +113,26 @@ color: grey;
 margin-right: 5px;
 
   }
+  .nav{
+
+    cursor: pointer;
+  }
   
+input::-webkit-input-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input::-moz-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input:-ms-input-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input:-moz-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+
+.data-show{
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.data-show td {
+    padding-left: 14px;
+}
+.data-show tr td {
+
+  width: 93px;
+}
