@@ -44,38 +44,35 @@ border-spacing: 0;
 }
 
 /*Reset CSS end*/
-
-.main-container{
-width: 100%;
-border: 1px solid gray;
+.main-container {
+    width: 100%;
+    border: 1px solid gray;
+    background-color: yellow;
 }
-
-.navbox1{
-border: 1px solid gray;
-width: 33%;
-height: 100px;
-float: left;
+.navbox1 {
+    border: 1px solid gray;
+    width: 33%;
+    height: 100px;
+    float: left;
+    background-color: red;
 }
-
-.navbox2{
-border: 1px solid gray;
-width: 33%;
-float: left;
-height: 100px;	
+.navbox2 {
+    border: 1px solid gray;
+    width: 33%;
+    float: left;
+    height: 100px;
+    background-color: blue;
 }
-
-.navbox3{
-border: 1px solid gray;
-width: 33%;
-float: right;
-height: 100px;
+.navbox3 {
+    border: 1px solid gray;
+    width: 33%;
+    float: right;
+    height: 100px;
+    background-color: green;
 }
-
-.main-container:after{
-content: "";
-display: block;
-clear: both;
-overflow: hidden;
-}
-
+.main-container:after {
+    content: "";
+    display: block;
+    clear: both;
+    overflow: hidden;
 }
