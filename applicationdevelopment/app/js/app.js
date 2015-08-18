@@ -216,7 +216,7 @@ AppController.prototype = {
 
     updateRow: function(view){
 
-        view.show()        
+        view.show()
        
     }
     
