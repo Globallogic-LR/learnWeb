@@ -9,19 +9,13 @@ var assService = {
 var AppModel = function(data){
     this.items = data || [];
 
-    // this.name = [];
-    // this.des = [];
-    // this.ownName = [];
-    // this.readPer = [];
-
     this.columnsHdr = ['Action','Name', 'Description', 'Owner Name', 'Read Permissions']
-
     this.columnsData = {
         'action': [],
         'name': [],
-        'des': [],
-        'ownName': [],
-        'readPer':[]
+        'description': [],
+        'ownerName': [],
+        'readPermissions':[]
     } 
     
  }
@@ -48,17 +42,15 @@ var AppModel = function(data){
         if(this.columnsData.name){
             this.columnsData.name = []
         }
-        if(this.columnsData.des){
-            this.columnsData.des = []
+        if(this.columnsData.description){
+            this.columnsData.description = []
         }
-        if(this.columnsData.ownName){
-            this.columnsData.ownName = []
+        if(this.columnsData.ownerName){
+            this.columnsData.ownerName = []
         }
-        if(this.columnsData.readPer){
-            this.columnsData.readPer = []
+        if(this.columnsData.readPermissions){
+            this.columnsData.readPermissions = []
         }
-
-
 
        for(key in _items){
             if(this.columnsData.action){
@@ -67,15 +59,15 @@ var AppModel = function(data){
             if(this.columnsData.name){
                 this.columnsData.name.push(_items[key].name)
             }
-            if(this.columnsData.des){
+            if(this.columnsData.description){
 
-                this.columnsData.des.push(_items[key].description)
+                this.columnsData.description.push(_items[key].description)
            }
-            if(this.columnsData.ownName){
-                this.columnsData.ownName.push(_items[key].ownerName)
+            if(this.columnsData.ownerName){
+                this.columnsData.ownerName.push(_items[key].ownerName)
             }
-            if(this.columnsData.readPer){
-                this.columnsData.readPer.push(_items[key].readPermissions)
+            if(this.columnsData.readPermissions){
+                this.columnsData.readPermissions.push(_items[key].readPermissions)
             }
        }
     }
@@ -96,37 +88,36 @@ AppView.prototype = {
         // All elements
         var tbody = this.elements.tbody,
             actionCol = this.elements.actionCol,
-            colDes = this.elements.colDes;
+            colDes = this.elements.colDes,
+            id = -1;
 
-            tbody.html('')
-        var   htmlAction = '<div class="cell">\
+            tbody.html('');
+        var htmlAction = '<div class="cell">\
                         <a href="#"><i class="glyphicon glyphicon-play"></i></a>\
                         <a href="#" class="edit"><i class="glyphicon glyphicon-pencil"></i></a>\
                         <a href="#" class="delete"><i class="glyphicon glyphicon-trash"></i></a>\
                         <button type="button" class="update-btn disable">Update</button>\
                     </div>'
-
-
         
-        var id = -1;
         for(var j in this.model.columnsData){
              id++
-
              tbody.append('<div class="col col-des">\
                          <div class="cell sorting">'+this.model.columnsHdr[id]+'</div>\
                          <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>\
                      </div>');
 
-
+            var inputName = j;
             for(var i in this.model.columnsData[j]){
                 if(id==0){
                     // for action column
                     tbody.find(colDes).eq(id).append(htmlAction)
                 }else{
                     // for data column
-                    tbody.find(colDes).eq(id).append('<div class="cell"><span class="content">'+this.model.columnsData[j][i]+'</span> <input type="text" class="input edit-input" value="'+this.model.columnsData[j][i]+'"></div>')
+                    tbody.find(colDes).eq(id).append('<div class="cell">\
+                        <span class="content">'+this.model.columnsData[j][i]+'</span> \
+                        <input type="text" class="input edit-input" name="'+inputName+'" value="'+this.model.columnsData[j][i]+'">\
+                    </div>')
                 }
-
 
             }
         }
@@ -142,8 +133,6 @@ var AppController = function(view){
     this.view = view;
     var that = this;
 
-    // this.elements.tabNavi.click(that.clickOn) through this way unable to access model
-
     this.elements.tabNavi.click(function(){
         that.clickOnTab(this)
     });
@@ -156,11 +145,13 @@ var AppController = function(view){
         that.inputKeyUp($(this))
     });
 
+    $(document).on('click',this.elements.del, function(){
+        that.delRow($(this), that.view)
+    });
+
     $(document).on('click',this.elements.updateBtn, function(){
         that.updateRow(that.view)
     });
-
-
 }
 
 AppController.prototype = {
@@ -182,18 +173,9 @@ AppController.prototype = {
             currentColumnId = currentInput.parents('.col-des').index(),
             currentCellId = currentInput.parent().index()
 
-        // console.log(currentInput.parents('.col-des').index())
+            currenColumn = currentInput.attr('name')
 
-        // this.model.getItems()[currentCellId-2].name = value
-        // this.model.getItems()[currentCellId-2].des = value
-        
-        for(var val in this.model.columnsData){
-
-            console.log(val)
-        }
-        
-        
-
+        this.model.getItems()[currentCellId-2][currenColumn] = value;
        
     },
     editClick: function(currentEdit, view){
@@ -204,29 +186,21 @@ AppController.prototype = {
             cell = this.elements.cell,
             allItems = this.model.getItems();
 
-        $(updateBtn).eq(currentId-1).removeClass('disable')
-
-        // this.model.getItems()[currentId-1].name = 'sdfdssdf';
-        
-       
+        $(updateBtn).eq(currentId-1).removeClass('disable') 
         $(colDes).each(function(i){
             $(this).find(cell).eq(currentId+1).addClass('active')
         })
     },
-
+    delRow: function(currentDel, view){
+       var currentDelId = currentDel.parent().index()-2;
+       this.model.getItems().splice(currentDelId, 1);
+       view.show()
+    },
     updateRow: function(view){
-
         view.show()
-       
     }
-    
-
 
 }
-
-
-
-
 
 
 
@@ -251,9 +225,7 @@ assService.getData().then(function(data){
 
     });
 
-    controller = new AppController(veiw)
-
-    // model.setColData()
-    veiw.show()
+    controller = new AppController(veiw);
+    veiw.show();
     
-})
+});

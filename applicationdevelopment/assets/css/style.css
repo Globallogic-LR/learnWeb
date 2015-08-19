@@ -30,6 +30,19 @@ table {
 	border-spacing: 0;
 	border-collapse: collapse;
 }
+.col-des:first-child .cell:first-child {
+	border-bottom: 0;
+	background: none;
+	pointer-events: none;
+}
+.col-des:first-child .input-cell {
+	border-top: 0;
+	background-color: inherit !important;
+}
+.col-des:first-child .input-cell input {
+	display: none;
+	border-top: 0;
+}
 .update-btn {
     background-color: #fff;
     border: 1px solid #aaa;
