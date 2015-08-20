@@ -515,9 +515,6 @@ td {
 }
 .td-template-class {
     width: 20%;
-    vertical-align: top;
-    /*background-color: #E1E1E1;*/
-    
     color: #5A5A5A;
     padding-left: 12px;
 }
