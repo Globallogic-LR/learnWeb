@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Screen-1</title>
+		<link rel="stylesheet" type="text/css" href="screen.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	</head>
+	
+	<body>
+		
+		<div class ="container">
+			<div class="nav">
+				<ul class="nav-list">
+					<li class="active"><a href="#"> All Saved </a></li>
+					<li id="data-two"><a href="C:\Users\danish.arora\Desktop\danish\screen-2.html" onclick="populateData2()">Shared Searches </a></li>
+					<li><a href="#"> My Saved </a></li>
+					<li><a href="#"> My Recent </a></li>
+				</ul>				
+			</div>
+			<div class="main-table">
+				<table class="table-head">	
+					<tr class="main-row">
+						<td ROWSPAN=2> Actions </td>
+						<td> Name <span class="arrow-updown">
+	<i class="glyphicon glyphicon-triangle-top gly "></i>
+  		<i class="glyphicon glyphicon-triangle-bottom gly"></i></span></td>
+						<td> Description <span class="arrow-updown">
+	<i class="glyphicon glyphicon-triangle-top gly "></i>
+  		<i class="glyphicon glyphicon-triangle-bottom gly"></i></span></td>
+						<td> Owner Name <span class="arrow-updown">
+	<i class="glyphicon glyphicon-triangle-top gly "></i>
+  		<i class="glyphicon glyphicon-triangle-bottom gly"></i></span></td>
+						<td> Read Permissions <span class="arrow-updown">
+	<i class="glyphicon glyphicon-triangle-top gly "></i>
+  		<i class="glyphicon glyphicon-triangle-bottom gly"></i></span></td>
+					</tr>
+					<tr class="search-row">
+						<td><input type="search" placeholder="Type Here"></td>
+						<td><input type="search" placeholder="Type Here"></td>
+						<td><input type="search" placeholder="Type Here"></td>
+						<td><input type="search" placeholder="Type Here"></td>
+					</tr>
+					</table>
+					<table class="data-show">
+					</table>
+
+			</div>
+			
+		</div>
+
+	</body>
+	<script src="main-script.js"></script>
+</html>
