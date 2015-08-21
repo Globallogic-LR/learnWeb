@@ -6,8 +6,8 @@
 	<script type="text/javascript" src="javascripts/mainScript.js"></script>
 </head>
 <div class="main-container">
-	<div class="nav-row">
-	 	<ul class="nav-list">
+	<div class="nav-row clearfix">
+	 	<ul class="nav-list clearfix">
 	 		<li><a href="#">All Saved</a></li>
 	 		<li><a href="#">Shared Searches</a></li>
 	 		<li><a href="#">My Saved</a></li>
@@ -15,31 +15,33 @@
 	 	</ul>
 	 </div>
 	 <div class="main-template-body">
-		 <table class="tbl-field"><thead>
-		 	<tr id="first-field-row">
-		 		<td class="td-field-class td-first-field">Actions</td>
-		 		<td class="td-field-class">Name <i class="fa fa-sort sort-icon"></i></td>
-		 		<td class="td-field-class td-description-field">Description <i class="fa fa-sort sort-icon"></i></td>
-		 		<td class="td-field-class">Owner Name <i class="fa fa-sort sort-icon"></i></td>
-		 		<td class="td-field-class">Read Permissions <i class="fa fa-sort sort-icon"></i></td>
-		 	</tr>	
-		 	<tr>
-		 		<td class="td-field-class td-first-field"></td>
-		 		<td class="td-input-field-class">
-		 			<input type="text" placeholder="Type Here" class="input-table-field">
-		 		</td>
-		 		<td class="td-input-field-class td-description-field">
-		 			<input type="text" placeholder="Type Here" class="input-table-field">
-		 		</td>
-		 		<td class="td-input-field-class">
-		 			<input type="text" placeholder="Type Here" class="input-table-field">
-		 		</td>
-		 		<td class="td-input-field-class">
-		 			<input type="text" placeholder="Type Here" class="input-table-field">
-		 		</td></thead>
-		 		<tbody id="mainDataTable" class="tbl-field"></tbody>	 		
-		 	</tr>
-		 </table>
+		<table class="tbl-field">
+			<thead>
+			 	<tr id="first-field-row">
+			 		<td class="td-field-class td-first-field">Actions</td>
+			 		<td class="td-field-class">Name <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class td-description-field">Description <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class">Owner Name <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class">Read Permissions <i class="fa fa-sort sort-icon"></i></td>
+			 	</tr>	
+			 	<tr>
+			 		<td class="td-field-class td-first-field"></td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class td-description-field">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 	</tr>
+			</thead> 		
+			<tbody id="mainDataTable" class="tbl-field"></tbody>
+		</table>
 	 </div>
 </div>
 </html>

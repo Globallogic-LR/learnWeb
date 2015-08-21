@@ -27,7 +27,5 @@ $(document).ready(function(){
 			pushHtmlTemplate:htmlTemplateFunc
 		};
 	})();
-
 	savedTemplateFunc.pushHtmlTemplate();
-
 });
