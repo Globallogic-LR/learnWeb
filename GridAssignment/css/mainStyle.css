@@ -51,26 +51,37 @@ border-spacing: 0;
 }
 .navbox1 {
     border: 1px solid gray;
-    width: 33%;
+    width: 25%;
     height: 100px;
     float: left;
     background-color: red;
+    box-sizing:border-box;
 }
 .navbox2 {
     border: 1px solid gray;
-    width: 33%;
+    width: 25%;
     float: left;
     height: 100px;
     background-color: blue;
+    box-sizing: border-box;
 }
 .navbox3 {
     border: 1px solid gray;
-    width: 33%;
-    float: right;
+    width: 25%;
+    float: left;
     height: 100px;
     background-color: green;
+    box-sizing: border-box;
 }
-.main-container:after {
+.navbox4 {
+    border: 1px solid gray;
+    width: 25%;
+    float: left;
+    height: 100px;
+    background-color: purple;
+    box-sizing: border-box;
+}
+.clearfix:after {
     content: "";
     display: block;
     clear: both;
