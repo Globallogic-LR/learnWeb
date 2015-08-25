@@ -19,96 +19,18 @@
         </ul>
     </div>
     <div class="content-wrapper">
-        <div id="all-saved" class="tab-content active">
-            <!-- <table class="table-data">
-                <thead>
-                    <tr>
-                        <th rowspan="2">Actions </th>
-                        <th class="sorting">Name</th>
-                        <th class="sorting">Description</th>
-                        <th class="sorting">Owner Name</th>
-                        <th class="sorting"> Read Permissions</th>
-                    </tr>
-                    <tr>
-                        <th><input type="text" name="name" placeholder="Type Here"></th>
-                        <th><input type="text" name="des"></th>
-                        <th><input type="text" name="ownerName"></th>
-                        <th><input type="text" name="rPerm"></th>
-                    </tr>
-                </thead>
-                <tbody class="data-table">
-                    <tr>
-                        <td>                            
-                            <div class="cell">
-                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
-                            </div>
-                            <div class="cell">
-                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
-                            </div>
-                            <div class="cell">
-                                <a href="#"><i class="glyphicon glyphicon-play"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-pencil"></i></a>
-                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
-                            </div>
-                        </td>
-                        <td class="data-column">
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                        </td>
-                        <td class="data-column"> 
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                        </td>
-                        <td class="data-column">
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                        </td>
-                        <td class="data-column">
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                            <div class="cell">sdfdsf</div>
-                        </td>
-                    </tr>
-                    
-                    
-                </tbody>
-            </table> -->
+
+        <!-- <div id="all-saved" class="tab-content active">
             <div class="data-table">
                 <div class="tbody">
-                    <!-- <div class="col action-col">
-                        <div class="cell">Action</div>
-                    </div> -->
-                    
-                    <!-- <div class="col col-name">
-                        <div class="cell sorting">Name</div>
-                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
-                    </div>
-                    <div class="col col-des">
-                        <div class="cell sorting">Description</div>
-                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
-                    </div>
-                    <div class="col col-owner">
-                        <div class="cell sorting">Owner Name</div>
-                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
-                    </div> 
-                    <div class="col col-perm">
-                        <div class="cell sorting">Read Permissions</div>
-                        <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>
-                    </div> -->
+                   
                 </div>
 
             </div>
-        </div>
+        </div> -->
 
-        <!-- Still in progress -->
-        <div id="shared" class="tab-content">
+        
+        <!-- <div id="shared" class="tab-content">
             <h2>Shared Searches</h2>
         </div>
         <div id="my-saved" class="tab-content">
@@ -116,7 +38,7 @@
         </div>
         <div id="my-recent" class="tab-content">
             <h2>My Recent</h2>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -124,5 +46,35 @@
 
 <script type="text/javascript" src="app/js/libs/jquery.min.js"></script>
 <script type="text/javascript" src="app/js/app.js"></script>
+
+<script type="text/x-tmpl" id="all-saved">
+    <div class="tab-content active">
+            <div class="data-table">
+                <div class="tbody">
+                   
+                </div>
+
+            </div>
+        </div>
+</script>
+
+<script type="text/x-tmpl" id="shared">
+    <div class="tab-content">
+        <h2>Shared Searches</h2>
+    </div>
+</script>
+
+<script type="text/x-tmpl" id="my-saved">
+    <div class="tab-content">
+        <h2>SMy Saved </h2>
+    </div>
+</script>
+
+<script type="text/x-tmpl" id="my-recent">
+    <div class="tab-content">
+        <h2>My Recent</h2>
+    </div>
+</script>
+
 </body>
 </html>

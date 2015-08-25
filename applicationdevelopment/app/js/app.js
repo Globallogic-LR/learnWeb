@@ -1,3 +1,4 @@
+var updateBtnId = null;
 
 var assService = {
     getData: function(){
@@ -79,19 +80,29 @@ var AppView = function(model, elements){
 }
 
 AppView.prototype = {
-    show: function(){
-        this.rebuildList()
+    show: function(activeTab){
+        this.rebuildList(activeTab)
     },
-    rebuildList: function(){
+    rebuildList: function(activeTab){
         this.model.setColData()
 
         // All elements
-        var tbody = this.elements.tbody,
+       
+        var 
+            contentWrapper = this.elements.contentWrapper,
+            tbody = this.elements.tbody,
             actionCol = this.elements.actionCol,
             colDes = this.elements.colDes,
+            cell = this.elements.cell,
             id = -1;
 
-            tbody.html('');
+         
+            currentTabHtml = $('#'+activeTab.data('id')+'').html();    
+
+            contentWrapper.find(tbody).html('');
+            contentWrapper.html(currentTabHtml)
+
+
         var htmlAction = '<div class="cell">\
                         <a href="#"><i class="glyphicon glyphicon-play"></i></a>\
                         <a href="#" class="edit"><i class="glyphicon glyphicon-pencil"></i></a>\
@@ -101,7 +112,8 @@ AppView.prototype = {
         
         for(var j in this.model.columnsData){
              id++
-             tbody.append('<div class="col col-des">\
+
+             contentWrapper.find(tbody).append('<div class="col col-des">\
                          <div class="cell sorting">'+this.model.columnsHdr[id]+'</div>\
                          <div class="cell input-cell"><input type="text" name="name" placeholder="Type Here"></div>\
                      </div>');
@@ -110,10 +122,10 @@ AppView.prototype = {
             for(var i in this.model.columnsData[j]){
                 if(id==0){
                     // for action column
-                    tbody.find(colDes).eq(id).append(htmlAction)
+                    contentWrapper.find(tbody).find(colDes).eq(id).append(htmlAction)
                 }else{
                     // for data column
-                    tbody.find(colDes).eq(id).append('<div class="cell">\
+                    contentWrapper.find(tbody).find(colDes).eq(id).append('<div class="cell">\
                         <span class="content">'+this.model.columnsData[j][i]+'</span> \
                         <input type="text" class="input edit-input" name="'+inputName+'" value="'+this.model.columnsData[j][i]+'">\
                     </div>')
@@ -121,6 +133,12 @@ AppView.prototype = {
 
             }
         }
+
+        // currentUpdate.parent().index()-2
+        // currentId
+
+        // var updateBtn = this.elements.updateBtn
+        // console.log(updateBtnId)
         
     }
 }
@@ -134,7 +152,7 @@ var AppController = function(view){
     var that = this;
 
     this.elements.tabNavi.click(function(){
-        that.clickOnTab(this)
+        that.clickOnTab(this, that.view)
     });
 
     $(document).on('click',this.elements.edit, function(){
@@ -150,27 +168,27 @@ var AppController = function(view){
     });
 
     $(document).on('click',this.elements.updateBtn, function(){
-        that.updateRow(that.view)
+        that.updateRow($(this), that.view)
+        
     });
 }
 
+
 AppController.prototype = {
-    clickOnTab: function(evt){
-       var currentTab = $(evt).data('id'),
-            tabNavi = this.elements.tabNavi,
-            tabContent = this.elements.tabContent
+    clickOnTab: function(evt, view){
+
+       var tabNavi = this.elements.tabNavi
+
        // Add and Remove class on tab
        
        tabNavi.parents('ul').find('li').removeClass('active')
-       $(this).parent().addClass('active')
+       $(evt).parent().addClass('active')
 
-       // // Add and Remove class on tab content
-       tabContent.removeClass('active');
-       $('#'+currentTab+'').addClass('active')
+       view.show($(evt))
+
     },
     inputKeyUp: function(currentInput){
         var value = currentInput.val(),
-            currentColumnId = currentInput.parents('.col-des').index(),
             currentCellId = currentInput.parent().index()
 
             currenColumn = currentInput.attr('name')
@@ -183,21 +201,30 @@ AppController.prototype = {
         var currentId = (currentEdit.parent().index()-1),
             updateBtn = this.elements.updateBtn,
             colDes = this.elements.colDes,
-            cell = this.elements.cell,
-            allItems = this.model.getItems();
+            cell = this.elements.cell;
+
 
         $(updateBtn).eq(currentId-1).removeClass('disable') 
+        
         $(colDes).each(function(i){
             $(this).find(cell).eq(currentId+1).addClass('active')
         })
+
     },
     delRow: function(currentDel, view){
-       var currentDelId = currentDel.parent().index()-2;
-       this.model.getItems().splice(currentDelId, 1);
-       view.show()
+        var currentDelId = currentDel.parent().index()-2,
+            activeNavi = view.elements.activeNavi
+
+
+        this.model.getItems().splice(currentDelId, 1);
+        view.show(activeNavi)
     },
-    updateRow: function(view){
-        view.show()
+    updateRow: function(currentUpdate, view){
+        var activeNavi = view.elements.activeNavi        
+        view.show(activeNavi)
+
+        //updateBtnId = currentUpdate.parent().index()-2
+        
     }
 
 }
@@ -209,13 +236,15 @@ var model,
 assService.getData().then(function(data){
     model = new AppModel(data);
     veiw = new AppView(model, {
+        'contentWrapper': $('.content-wrapper'),
         'dataTable': $('.data-table'),
-        'tbody': $('.data-table .tbody'),
+        'tbody': '.data-table .tbody',
         'actionCol': $('.action-col'),
         'colDes': '.col-des',
         'cell': '.cell',
         'editInput' : '.edit-input',
 
+        'activeNavi' : $('.tab-navi li.active a'),
         'tabNavi' : $('.tab-navi li a'),
         'tabContent': $('.tab-content'),
 
@@ -226,6 +255,6 @@ assService.getData().then(function(data){
     });
 
     controller = new AppController(veiw);
-    veiw.show();
+    veiw.show($('.tab-navi li.active a'));
     
 });
