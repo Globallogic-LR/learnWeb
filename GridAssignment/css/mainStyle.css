@@ -49,7 +49,7 @@ border-spacing: 0;
     border: 1px solid gray;
     background-color: yellow;
 }
-.navbox1 {
+.navbox{
     border: 1px solid gray;
     width: 25%;
     height: 100px;
@@ -57,29 +57,14 @@ border-spacing: 0;
     background-color: red;
     box-sizing:border-box;
 }
-.navbox2 {
-    border: 1px solid gray;
-    width: 25%;
-    float: left;
-    height: 100px;
+.navbox2-color-class {
     background-color: blue;
-    box-sizing: border-box;
 }
-.navbox3 {
-    border: 1px solid gray;
-    width: 25%;
-    float: left;
-    height: 100px;
+.navbox3-color-class {
     background-color: green;
-    box-sizing: border-box;
 }
-.navbox4 {
-    border: 1px solid gray;
-    width: 25%;
-    float: left;
-    height: 100px;
+.navbox4-color-class {
     background-color: purple;
-    box-sizing: border-box;
 }
 .clearfix:after {
     content: "";
