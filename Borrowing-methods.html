@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prac</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+ 
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+/* Title: Borrowing Methods
+ Description: reuse one or two methods of an existing object without forming a parent-child relationship with that object
+ */
+
+ 
+function f() {
+    var args = [].slice.call(arguments, 1, 3);
+    return args;
+}
+var one = {
+    name:'object',
+    say:function (greet) {
+        return greet + ', ' + this.name;
+    }
+};
+// test
+console.log(one.say('hi')); // "hi, object"
+var two = {
+    name:'another object'
+};
+
+// apply two to original object one.
+console.log(one.say.apply(two, ['hello'])); // "hello, another object"
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

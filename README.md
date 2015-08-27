@@ -1,2 +1,2 @@
 # learnWeb
-Learn WEB.
+learnWeb

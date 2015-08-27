@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mixing</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+ 
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+var asCircle = function() {
+  this.area = function() {
+    return 'asCircle'
+  };
+  this.grow = function() {
+    return 'grow'
+  };
+  this.shrink = function() {
+   return 'shrink'
+  };
+  return this;
+};
+
+
+var asButton = function() {
+  this.hover = function(bool) {
+    return 'hover'
+  };
+  this.press = function(bool) {
+    return 'pressed'
+  };
+  this.fire = function() {
+    return 'fire'
+  };
+  return this;
+}; 
+
+
+var asOval = function(options) {
+  this.ovalArea = function() {
+    return 'ovalArea'
+  };
+  this.ovalRatio = function() {
+    return 'ovalRatio'
+  };
+  return this;
+}
+
+asCircle.call(asButton.prototype);
+
+asOval.call(asButton.prototype);
+
+var final = new asButton();
+
+console.log(final.area())
+console.log(final.grow())
+console.log(final.shrink())
+console.log(final.hover())
+console.log(final.press())
+console.log(final.fire())
+console.log(final.ovalArea())
+console.log(final.ovalRatio())
+
+</script>
+
+</body>
+</html>
