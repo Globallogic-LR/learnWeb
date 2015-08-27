@@ -1,4 +1,7 @@
-var updateBtnId = null;
+var updateBtnId = null,
+    iteration = [],
+    uniqueNmbr = []
+
 
 var assService = {
     getData: function(){
@@ -133,12 +136,6 @@ AppView.prototype = {
 
             }
         }
-
-        // currentUpdate.parent().index()-2
-        // currentId
-
-        // var updateBtn = this.elements.updateBtn
-        // console.log(updateBtnId)
         
     }
 }
@@ -203,9 +200,14 @@ AppController.prototype = {
             colDes = this.elements.colDes,
             cell = this.elements.cell;
 
+            iteration.push(currentId)
 
-        $(updateBtn).eq(currentId-1).removeClass('disable') 
-        
+            $.each(iteration, function(i, el){
+                if($.inArray(el, uniqueNmbr) === -1) uniqueNmbr.push(el);
+            });
+
+        $(updateBtn).eq(currentId-1).removeClass('disable')
+
         $(colDes).each(function(i){
             $(this).find(cell).eq(currentId+1).addClass('active')
         })
@@ -213,18 +215,30 @@ AppController.prototype = {
     },
     delRow: function(currentDel, view){
         var currentDelId = currentDel.parent().index()-2,
-            activeNavi = view.elements.activeNavi
-
+            activeNavi = view.elements.activeNavi;
 
         this.model.getItems().splice(currentDelId, 1);
         view.show(activeNavi)
     },
     updateRow: function(currentUpdate, view){
-        var activeNavi = view.elements.activeNavi        
+        var activeNavi = view.elements.activeNavi,
+            colDes = this.elements.colDes,
+            cell = this.elements.cell,
+            updateBtn = this.elements.updateBtn,
+            updateBtnId = currentUpdate.parent().index()-2,
+            indexOfItem = (uniqueNmbr.indexOf(updateBtnId+1)) 
+       
         view.show(activeNavi)
-
-        //updateBtnId = currentUpdate.parent().index()-2
         
+        uniqueNmbr.splice(indexOfItem, 1)
+
+        $(colDes).each(function(i){
+           for(id in uniqueNmbr){                
+                $(this).find(cell).eq(uniqueNmbr[id]+1).addClass('active')
+                $(updateBtn).eq(uniqueNmbr[id]-1).removeClass('disable')
+            }
+        })
+
     }
 
 }
@@ -258,3 +272,8 @@ assService.getData().then(function(data){
     veiw.show($('.tab-navi li.active a'));
     
 });
+
+
+
+
+
