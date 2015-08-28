@@ -5,6 +5,10 @@ var mysharedSearchData = JSON.parse(sharedSearchData);
 $(document).ready(function(){
 	var tableElem = document.getElementById("mainDataTable");
 	var mainTableBodyElem= document.getElementById("mainTableBody");
+	var playButtonElems = document.getElementsByClassName("fa-play");
+	var editButtonElems = document.getElementsByClassName("fa-pencil");
+	var trashButtonElems = document.getElementsByClassName("fa-trash-o");
+	var faIconArr = [playButtonElems, editButtonElems, trashButtonElems];
 	var savedTemplateFunc = (function(){
 		var htmlTemplate ='<tr> \
 		 		<td id="actionCell" class="td-template-class td-first-template"><i id="playButton" class="fa fa-play"></i> <i class="fa fa-pencil"></i> <i class="fa fa-trash-o"></i> </td> \
@@ -13,6 +17,18 @@ $(document).ready(function(){
 		 		<td id="ownerNameCell" class="td-template-class">Owner Name</td> \
 		 		<td id="permissionCell" class="td-template-class">Read Permissions</td> \
 		 		</tr>';
+
+		var enableTextboxRow = function (element, rowIndex) {
+/*			console.log("row index = "+rowIndex);
+			console.log("element = "+element);
+			if(element == editButtonElems){
+				console.log("inside");
+			}
+			else
+			{
+				console.log("outside");
+			}*/
+		}
 
 		var htmlTemplateFunc = function(templateData){
 			if(tableElem.hasChildNodes()){
@@ -32,6 +48,13 @@ $(document).ready(function(){
 				//to be done later for string interpolation
 				//str.replace ('', function(m){ return myCampaignData[i][m]})
 			}
+			for (var i = 0; i <faIconArr.length; i++){
+				for(var j=0; j<faIconArr[i].length; j++){
+					faIconArr[i][j].addEventListener("click", function(e){
+						enableTextboxRow(faIconArr[i], this.parentNode.parentNode.rowIndex);
+					});
+				};
+			};
 		};
 		return{
 			pushAllSavedData:function(){htmlTemplateFunc(myCampaignData)},
@@ -43,4 +66,5 @@ $(document).ready(function(){
 	allSaved.addEventListener("click",function(){savedTemplateFunc.pushAllSavedData()});
 	sharedSearchesElem.addEventListener("click",function(){savedTemplateFunc.pushSharedSearchesData()});
 	savedTemplateFunc.pushAllSavedData();
+
 });
