@@ -513,7 +513,6 @@ td{
   border-bottom: 0px;
   width: 20%;
   color: #5A5A5A;
-  padding-left: 12px;
 }
 .td-first-template {
   width: 12%;
@@ -541,4 +540,7 @@ td{
 .main-template-body{
   max-height:500px;
   overflow: auto;
+}
+#mainDataTable input:disabled{
+  background-color: inherit;
 }
