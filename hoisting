@@ -1,0 +1,16 @@
+<h2>Hoisting</h2> 
+
+<script>
+
+var d = "Its a global";
+
+function func() {  
+	alert(d);		//it will show undefined as per hoisting
+	var d = "Local";
+	alert(d); 		// This  will show local
+}
+alert(d); 		// this will show global 
+func();
+
+
+</script>

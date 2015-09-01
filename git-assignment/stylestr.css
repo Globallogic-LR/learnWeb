@@ -1,0 +1,192 @@
+.left{
+width: 240px;
+height: 620px;
+float:left;
+}
+
+.search{
+height: 32px;
+width: 240px;
+background-color: #4b4a4a;
+margin-top: 4px;
+
+}
+.dashboard{
+height: 575px;
+width: 240px;
+background-color: #4b4a4a;
+margin-top: 5px;
+}
+#searchform{
+margin-left: 4px;
+margin-bottom: 4px;
+margin-top: 4px;
+font-style: italic;
+font-size: 12px;
+width: 172px;
+}
+#searchbtn{
+height: 20px;
+width: 52px;
+background-color: #d83c3c;
+font-size: 9px;
+color: white;
+border-color: #d83c3c;
+border-collapse: collapse;
+}
+.dashboard h2{
+	font-size: 15px;
+	color: white;
+	margin-right: 15px;
+	text-align: center;
+	padding-top: 30px;   
+	font-variant: small-caps;
+	}
+
+ul
+{
+ list-style-type: none;
+   padding: 0px;
+}
+
+.txt2{
+
+background-color: white;
+height: 20px;
+color: #d83c3c;
+}
+
+.navleft{
+
+color: white;
+border-bottom: 2px;
+
+}
+.dashboard ul li{
+
+	border-bottom: 1px solid #a0a0a0;
+	text-align: center;
+	padding: 5px;
+
+}
+.dashboard li:last-child:after{
+	content: "";
+}
+
+.dashboard .navleft .txt2{
+
+	border-right: 4px solid #d83c3c;
+}
+.right{
+
+	width: 740px;
+	height: 620px;
+	margin-left: 15px;
+	float: left;
+}
+.breadcrumb{
+
+	height: 32px;
+	width: 740px;
+	
+
+}
+.breadcrumb li{
+
+	display: inline;
+	}
+
+.breadcrumb li::after {
+
+content:" > ";
+color: #a0a0a0;
+font-weight: bold;
+text-shadow: 0px 1px #a0a0a0;
+font-family: sans-serif;
+}
+
+.breadcrumb li:last-child{ 
+	color: #d83c3c; 
+
+}
+
+.breadcrumb li:last-child:after{
+
+	content: " ";
+}
+
+.breadcrumb li:first-child{
+
+	color: #13a0f8; 
+}
+.maintable{
+width:740px;
+height: 580px;
+margin-top: 27px;
+}
+
+.headbtn p{
+	color: #13a0f8;
+	display: inline;
+	}
+.headbtn .btn{
+
+background-color: white;
+background-repeat: no-repeat;
+border: none;
+overflow: hidden;
+color: #666;
+float: right;
+}
+
+#Update{
+	border-left: 1px solid #666;
+}
+.table{
+
+	background-color: #d83c3c;
+	}
+
+ .table ul {
+
+	  width:740px;
+	  height: 35px;
+	  color: white;
+	  text-align: center;
+
+	  }
+.table ul li{
+		display: inline;
+		margin-right: 50px;
+		text-shadow: 2px 2px 8px #FF0000;
+        line-height: 35px;
+
+		}
+.navleft li:last-child { 
+	border-bottom:0px; 
+}
+
+.dataTable {
+    background-color: #b4b4b4;
+    height: 460px;
+    overflow: scroll;
+}
+.container{
+
+width: 1000px;
+padding-top: 40px;
+margin-left: auto;
+margin-right: auto;
+}
+.dataTable ul {
+
+	color: grey;
+	text-align: center;
+}
+.dataTable ul li{
+
+display: inline;
+border-bottom: 1px thin solid;
+margin-right: 40px;
+padding: 0px;
+}

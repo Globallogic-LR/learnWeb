@@ -1,0 +1,37 @@
+<h2>Outline</h2>
+<div class="first">
+	<div class="second">
+		<div class="third">			
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.first{
+
+		height: 500px;
+		width: 500px;
+		margin: auto;
+		outline: 1px solid blue; 
+		}	
+
+.second{
+
+	height:200px;
+	width: 40%;
+	float: left;
+	outline: 2px dotted red;
+	position: relative;
+    top: 57px;
+    left: 154px;
+}
+.third{
+height: 100px;
+width: 100px;
+outline: 1px solid green;
+position: absolute;
+top: 50px;
+left: 50px;
+
+
+}
+</style>

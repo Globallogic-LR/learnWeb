@@ -1,0 +1,138 @@
+
+.container{
+	width: 980px;
+    margin: auto;
+	}
+
+.nav-list{
+    margin: auto;
+    background-color: #D9D9D9;
+    height: 35px;
+    overflow: hidden;
+    padding: 0px;
+
+    }
+.nav-list li{
+	/* list-style-position: inside; */
+    border: 1px solid #ABABAB;
+    list-style-type: none;
+    /* display: inline-block; */
+    /* margin: 30px; */
+     padding: 8px;
+     padding-right: 20px;
+     padding-left: 20px;
+    /* margin-left: 0px; */
+    float: left;
+    background-color: #B8B8B8;
+}
+.nav-list li a{
+	text-decoration: none;
+	color: black;
+	text-shadow: 0.2px 0.3px rgba(171, 168, 168, 0.4);
+	font-family: monospace;
+  display: block;
+
+
+}
+.nav-list .active{
+
+	    background-color: hsla(355,88%,100%,0.9);
+	    border-bottom: none;
+}
+.nav-list li:hover{
+	background-color: hsla(355,88%,100%,0.9);
+}
+
+.main-table{
+      margin: 0px;
+    padding: 3px;
+    height: 500px;
+   overflow: scroll;
+    background-color: #F7F7F7;
+}
+.table-head, .data-show{
+
+	    width: 100%;
+}
+table{
+
+	border-collapse: collapse;
+ 
+}
+td{
+	border: 1px solid rgba(169, 165, 165, 0.25);
+	border-left: none;
+	border-top: none;
+
+
+}
+
+.glyphicon{
+	color: dimgray;
+	margin: auto;
+  font-size: 10px;
+}
+.data-show tr:nth-child(odd){
+	    background-color: white;
+}
+.main-row td{
+
+  padding-bottom: 10px;
+  position: relative;
+  vertical-align: top;
+  padding-left: 10px;
+  font-family: monospace;
+    font-weight: bold;
+    color: grey;
+
+}
+.search-row input{
+
+  width: 100%;
+}
+.arrow-updown{
+width: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    top: 13px;
+    line-height: 0;
+}
+.gly{
+
+  font-size: 6px;
+  }
+  .glyphicon-triangle-top{
+  
+  position: absolute;
+  top: 10px;
+  }
+  .color-gly{
+
+color: grey;
+margin-right: 5px;
+
+  }
+  .nav{
+
+    cursor: pointer;
+  }
+  
+input::-webkit-input-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input::-moz-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input:-ms-input-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+input:-moz-placeholder { font-size: 10pt; color: #585858; padding-left: 5px; font-weight: bold; font-family: monospace;}
+
+.data-show{
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.data-show td {
+    padding-left: 14px;
+}
+.data-show tr td {
+
+  width: 93px;
+}

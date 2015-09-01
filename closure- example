@@ -1,0 +1,24 @@
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {        //closure ("inner functiom")
+    privateCounter += val;        //inner function accessing outer function
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };   
+})();
+
+console.log(counter.value()); // logs 0
+counter.increment();    //increment by 1
+counter.increment();    //increment by 1
+console.log(counter.value()); // logs 2
+counter.decrement();    //decrement by 1
+console.log(counter.value()); // logs 1

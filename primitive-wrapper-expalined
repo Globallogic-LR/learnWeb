@@ -1,0 +1,35 @@
+<h2>Primitive Wrapper</h2>
+
+//In this by adding "new" we can have a constructor and we can use  dani &b dany both as a object/method and primitive ones directly
+<script>
+var str = "dvghscv";
+undefined
+typeof str
+"string"
+var sdr = 200;
+undefined
+sdr
+200
+typeof sdr;
+"number"
+var dani = new String("Dani"); 
+undefined
+typeof dani;
+"object"
+dani
+String {0: "D", 1: "a", 2: "n", 3: "i", length: 4, [[PrimitiveValue]]: "Dani"}
+var dany = Number(23);
+undefined
+dany
+23
+var dany = new Number(23);
+undefined
+dany
+Number {[[PrimitiveValue]]: 23}
+dany + dani
+"23Dani"
+dani + str
+"Danidvghscv"
+dani + sdr
+"Dani200"
+</script>

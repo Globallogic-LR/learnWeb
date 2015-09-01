@@ -1,0 +1,128 @@
+<html>
+	<head>
+<link rel="stylesheet" type="text/css" href="stylestr.css">
+
+</head>
+	<body>
+	<div class="container">
+		<div class="left">
+			<div class="search">
+				<input type="search" id="searchform" placeholder="Search here..." name="search">
+				<input type="submit" id="searchbtn" value="SEARCH">
+
+			</div>
+			<div class="dashboard">
+				<h2>dashboard</h2>
+				<ul class="navleft">
+					<li class="txt2">Campaigns</li>
+					<li>Account</li>
+					<li>Users</li>
+					<li>Downloads</li>
+					<li>Sales</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="right">
+			<div class="breadcrumb">
+		<ul>
+		  <li>DASHBOARD</li>
+		  <li>Campaigns</li>
+		</ul>
+			</div>
+			<div class="maintable">
+				<div class="headbtn">
+					<p>	Recent Campaigns </p>
+					<input class="btn" id="Update" type="button" value="Update" onclick="updateSearch()">
+					<input class="btn" id="Showall" type="button" value="Show All" onclick="show()">
+				</div>
+				<div class="table">
+					<ul>
+	                  <li>Name</li>
+	                  <li>Date Created</li>
+	                  <li>Last Updated</li>
+	                  <li>Total views</li>
+	                  <li>Sales</li> 
+	                  <li>End Date</li>
+	              	</ul>
+				</div>
+					<div class="dataTable"> 
+			
+        <ul class="add-ul">
+        </ul>
+			</div>
+		    </div>
+		</div>
+	</div>
+<script>
+
+
+ var data ={"items": [{"name":"Campaign Name", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name1", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name2", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name3", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name4", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name5", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name5", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name6", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name7", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name8", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name9", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name10", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},{"name":"Campaign Name11", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name12", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name13", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name14", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name15", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name16", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name17", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name18", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name19", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name20", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name21", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name21", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"}, {"name":"Campaign Name22", "dateCreated":"12 Dec 2014", "lastUpdated":"18 Dec 2014","totalViews":"5k","sales":"1000 units","endDate":"31 Dec 2014"},]};
+
+  console.log(data);
+  var d = data.length;
+  console.log(d);
+
+  function updateSearch(){
+  alert("vcmkvn");
+   var news = document.getElementsByClassName("add-ul")[0];
+  var items = data.items;
+  for(var i = 0; i <= 12; i++) {
+  //alert("fndcbd");
+    var newli = document.createElement("li");
+    newli.innerHTML = items[i].name;
+    news.appendChild(newli);
+    var twoli = document.createElement("li");
+    twoli.innerHTML = items[i].dateCreated;
+    news.appendChild(twoli);
+    var threeli = document.createElement("li");
+    threeli.innerHTML = items[i].lastUpdated;
+    news.appendChild(threeli);
+    var fourli = document.createElement("li");
+    fourli.innerHTML = items[i].totalViews;
+    news.appendChild(fourli);
+    var fiveli = document.createElement("li");
+    fiveli.innerHTML = items[i].sales;
+    news.appendChild(fiveli);
+    var sixli = document.createElement("li");
+    sixli.innerHTML = items[i].endDate;
+    news.appendChild(sixli);
+    var hr = document.createElement("hr");
+    news.appendChild(hr);
+};
+}
+
+
+function show(){
+  alert("ckn");
+var news = document.getElementsByClassName("add-ul")[0];
+var items = data.items;
+for(var i = 0; i <= items.length; i++) {
+    var newli = document.createElement("li");
+    newli.innerHTML = items[i].name;
+    news.appendChild(newli);
+    var twoli = document.createElement("li");
+    twoli.innerHTML = items[i].dateCreated;
+    news.appendChild(twoli);
+    var threeli = document.createElement("li");
+    threeli.innerHTML = items[i].lastUpdated;
+    news.appendChild(threeli);
+    var fourli = document.createElement("li");
+    fourli.innerHTML = items[i].totalViews;
+    news.appendChild(fourli);
+    var fiveli = document.createElement("li");
+    fiveli.innerHTML = items[i].sales;
+    news.appendChild(fiveli);
+    var sixli = document.createElement("li");
+    sixli.innerHTML = items[i].endDate;
+    news.appendChild(sixli);
+    var hr = document.createElement("hr");
+    news.appendChild(hr);
+};
+}
+
+
+</script>
+	</body>		
+</html>

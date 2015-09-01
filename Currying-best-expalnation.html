@@ -1,0 +1,25 @@
+<h2>Currying-best-expalnation</h2>
+
+<script>
+function currying(fn){ 
+var slice = Array.prototype.slice, 
+stored_args = slice.call(arguments, 1); 
+return function(){
+ var new_args = slice.call(arguments), 
+ args = stored_args.concat(new_args); 
+ return fn.apply(null, args); 
+ };
+ }
+
+ function add(a,b,c,d,e){ 
+ 	return a+b+c+d+e;
+ }
+ var totalSum = currying(add,1,2,3)(5,6);
+alert(totalSum);
+var addOne = currying(add, 1);
+var totaladdOne = addOne(10,20,30,25);
+alert(totaladdOne);
+addDix = currying(addOne, 2 , 3);
+var totaladdDix = addDix(10, 25 ,48);
+alert(totaladdDix);
+</script>
