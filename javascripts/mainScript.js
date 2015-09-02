@@ -1,11 +1,20 @@
-var campaignData = '[{"name":"Campaign Name", "description":" Description", "ownerName":"Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"}]';
 //var myCampaignData = JSON.parse(campaignData);
-var sharedSearchData = '[{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"}]';
-//var mysharedSearchData = JSON.parse(sharedSearchData);
-sessionStorage.setItem("localCampaignData",campaignData);
+//var mySharedSearchData = JSON.parse(sharedSearchData);
 var myCampaignData = JSON.parse(sessionStorage.getItem("localCampaignData"));
-sessionStorage.setItem("localSharedSearchData",sharedSearchData);
-var mysharedSearchData = JSON.parse(sessionStorage.getItem("localSharedSearchData"));
+var mySharedSearchData = JSON.parse(sessionStorage.getItem("localSharedSearchData"));
+console.log(myCampaignData,mySharedSearchData);
+if(!myCampaignData){
+	console.log("outside");
+	var campaignData = '[{"name":"Campaign Name", "description":" Description", "ownerName":"Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"}]';
+	sessionStorage.setItem("localCampaignData",campaignData);
+	myCampaignData = JSON.parse(campaignData);
+}
+if(!mySharedSearchData){
+	console.log("shared outside");
+	var sharedSearchData = '[{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"}]';
+	sessionStorage.setItem("localSharedSearchData",sharedSearchData);
+	mySharedSearchData = JSON.parse(sharedSearchData);
+}
 $(document).ready(function(){
 	var tableElem = document.getElementById("mainDataTable");
 	var mainTableBodyElem= document.getElementById("mainTableBody");
@@ -26,43 +35,54 @@ $(document).ready(function(){
 			}
 		}
 
-		var saveRowData = function (rowIndex){
+		var saveRowData = function (templateDataName, templateData, rowIndex){
 			var inputBox = inputBoxRows[rowIndex-2].getElementsByTagName('input');
+			templateData[rowIndex-2].name = inputBox[0].value;
+			templateData[rowIndex-2].description = inputBox[1].value;
+			templateData[rowIndex-2].ownerName = inputBox[2].value;
+			templateData[rowIndex-2].readPermissions = inputBox[3].value;
+			
+			if(templateDataName == "myCampaignData"){
+				sessionStorage.setItem("localCampaignData",JSON.stringify(templateData));
+			}
+			if(templateDataName == "mySharedSearchData"){
+				sessionStorage.setItem("localSharedSearchData",JSON.stringify(templateData));
+			}
 			for(var i=0; i<inputBox.length;i++){
-				console.log(inputBox[i].value);
-				console.log(myCampaignData[i]);
 				inputBox[i].disabled = 'disabled';
 			}
 		}
 
-		var htmlTemplateFunc = function(templateData){
+		var htmlTemplateFunc = function(templateData, templateDataName){
 			if(tableElem.hasChildNodes()){
 				var tdElements=tableElem.getElementsByTagName("tr");
 				for(x = tdElements.length - 1; x >= 0; x--){
 					tableElem.removeChild(tdElements[x]);
 				}
 			}
-			
 			for(var i=0; i<templateData.length ;i++){
 				tableElem.insertAdjacentHTML('afterbegin', htmlTemplate);
 				document.getElementById('playButton').addEventListener("click", function(e){
-						saveRowData(this.parentNode.parentNode.rowIndex);
+					saveRowData(templateDataName,templateData, this.parentNode.parentNode.rowIndex);
 				});
 				document.getElementById('editButton').addEventListener("click", function(e){
-						enableTextboxRow(this.parentNode.parentNode.rowIndex);
+					enableTextboxRow(this.parentNode.parentNode.rowIndex);
 				});
-				document.getElementById('inputNameCell').value = templateData[i].name;
-				document.getElementById("inputDescriptionCell").value = templateData[i].description;
-				document.getElementById("inputOwnerNameCell").value = templateData[i].ownerName;
-				document.getElementById("inputPermissionCell").value = templateData[i].readPermissions;	
-
+				
 				//to be done later for string interpolation
 				//str.replace ('', function(m){ return myCampaignData[i][m]})
 			}
+			for(var i=0; i<templateData.length ;i++){
+				var inputBox = inputBoxRows[i].getElementsByTagName('input');
+				inputBox[0].value = templateData[i].name;
+				inputBox[1].value = templateData[i].description;
+				inputBox[2].value = templateData[i].ownerName;
+				inputBox[3].value = templateData[i].readPermissions;
+			}
 		};
 		return{
-			pushAllSavedData:function(){htmlTemplateFunc(myCampaignData)},
-			pushSharedSearchesData:function(){htmlTemplateFunc(mysharedSearchData)}
+			pushAllSavedData:function(){htmlTemplateFunc(myCampaignData,"myCampaignData")},
+			pushSharedSearchesData:function(){htmlTemplateFunc(mySharedSearchData,"mySharedSearchData")}
 		};
 	})();
 	var allSavedElem = document.getElementById("allSaved");
