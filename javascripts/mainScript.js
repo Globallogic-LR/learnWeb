@@ -1,8 +1,5 @@
-//var myCampaignData = JSON.parse(campaignData);
-//var mySharedSearchData = JSON.parse(sharedSearchData);
 var myCampaignData = JSON.parse(sessionStorage.getItem("localCampaignData"));
 var mySharedSearchData = JSON.parse(sessionStorage.getItem("localSharedSearchData"));
-console.log(myCampaignData,mySharedSearchData);
 if(!myCampaignData){
 	console.log("outside");
 	var campaignData = '[{"name":"Campaign Name", "description":" Description", "ownerName":"Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"},{"name":"Campaign Name", "description":" Description", "ownerName":" Owner Name","readPermissions":"private"}]';
@@ -21,12 +18,21 @@ $(document).ready(function(){
 	var inputBoxRows = document.getElementById("mainDataTable").getElementsByTagName('tr');
 	var savedTemplateFunc = (function(){
 		var htmlTemplate ='<tr class="inputbox-visible-class"> \
-		 		<td id="actionCell" class="td-template-class td-first-template"><i id="playButton" class="fa fa-play"></i> <i id="editButton" class="fa fa-pencil"></i> <i class="fa fa-trash-o"></i> </td> \
+		 		<td id="actionCell" class="td-template-class td-first-template"><i id="playButton" class="fa fa-play"></i> <i id="editButton" class="fa fa-pencil"></i> <i id="trashButton" class="fa fa-trash-o"></i> </td> \
 		 		<td id="nameCell" class="td-template-class"><input disabled = "true" id="inputNameCell" type="text" placeholder="Type Here" class="input-table-field"></td> \
 		 		<td id="descriptionCell" class="td-template-class td-description-template"><input disabled = "true" id="inputDescriptionCell" type="text" placeholder="Type Here" class="input-table-field"></td> \
 		 		<td id="ownerNameCell" class="td-template-class"><input disabled = "true" id="inputOwnerNameCell" type="text" placeholder="Type Here" class="input-table-field"></td> \
 		 		<td id="permissionCell" class="td-template-class"><input disabled = "true" id="inputPermissionCell" type="text" placeholder="Type Here" class="input-table-field"></td> \
 		 		</tr>';
+
+		var pushToSessionStorage = function(templateDataName, templateData){
+			if(templateDataName == "myCampaignData"){
+				sessionStorage.setItem("localCampaignData",JSON.stringify(templateData));
+			}
+			if(templateDataName == "mySharedSearchData"){
+				sessionStorage.setItem("localSharedSearchData",JSON.stringify(templateData));
+			}
+		}
 
 		var enableTextboxRow = function (rowIndex){
 			var inputBox = inputBoxRows[rowIndex-2].getElementsByTagName('input');
@@ -42,15 +48,17 @@ $(document).ready(function(){
 			templateData[rowIndex-2].ownerName = inputBox[2].value;
 			templateData[rowIndex-2].readPermissions = inputBox[3].value;
 			
-			if(templateDataName == "myCampaignData"){
-				sessionStorage.setItem("localCampaignData",JSON.stringify(templateData));
-			}
-			if(templateDataName == "mySharedSearchData"){
-				sessionStorage.setItem("localSharedSearchData",JSON.stringify(templateData));
-			}
+			pushToSessionStorage(templateDataName, templateData);
+
 			for(var i=0; i<inputBox.length;i++){
 				inputBox[i].disabled = 'disabled';
 			}
+		}
+
+		var deleteFullRow = function (templateDataName, templateData, rowIndex){
+			templateData.splice(rowIndex-2, 1);
+			pushToSessionStorage(templateDataName, templateData);
+			tableElem.removeChild(inputBoxRows[rowIndex-2]);
 		}
 
 		var htmlTemplateFunc = function(templateData, templateDataName){
@@ -67,6 +75,9 @@ $(document).ready(function(){
 				});
 				document.getElementById('editButton').addEventListener("click", function(e){
 					enableTextboxRow(this.parentNode.parentNode.rowIndex);
+				});
+				document.getElementById('trashButton').addEventListener("click", function(e){
+					deleteFullRow(templateDataName,templateData,this.parentNode.parentNode.rowIndex);
 				});
 				
 				//to be done later for string interpolation
