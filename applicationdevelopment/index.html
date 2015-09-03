@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Development</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+<body>
+
+
+
+<div class="wrapper">
+    <div class="tab-navi">
+        <ul class="clearfix">
+            <li class="active"><a href="#" data-id="all-saved">All Saved </a></li>
+            <li><a href="#" data-id="shared">Shared Searches </a></li>
+            <li><a href="#" data-id="my-saved">My Saved </a></li>
+            <li><a href="#" data-id="my-recent">My Recent</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="app/js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="app/js/libs/jquery.cookie.js"></script>
+<script type="text/javascript" src="app/js/app.js"></script>
+
+<script type="text/x-tmpl" id="all-saved">
+    <div class="tab-content active">
+            <div class="data-table">
+                <div class="tbody">
+                   
+                </div>
+
+            </div>
+        </div>
+</script>
+
+<script type="text/x-tmpl" id="shared">
+    <div class="tab-content">
+        <h2>Shared Searches</h2>
+    </div>
+</script>
+
+<script type="text/x-tmpl" id="my-saved">
+    <div class="tab-content">
+        <h2>SMy Saved </h2>
+    </div>
+</script>
+
+<script type="text/x-tmpl" id="my-recent">
+    <div class="tab-content">
+        <h2>My Recent</h2>
+    </div>
+</script>
+
+
+</body>
+</html>

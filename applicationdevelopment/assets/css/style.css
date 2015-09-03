@@ -1,0 +1,185 @@
+body {
+	font-family: Myriad Pro;
+	color: #666666;
+	padding: 0;
+	font-size: 14px;
+}
+* {
+	box-sizing: border-box;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;	
+}
+a {
+	color: #13a0f8;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.col-des:first-child .cell:first-child {
+	border-bottom: 0;
+	background: none;
+	pointer-events: none;
+}
+.col-des:first-child .input-cell {
+	border-top: 0;
+	background-color: inherit !important;
+}
+.col-des:first-child .input-cell input {
+	display: none;
+	border-top: 0;
+}
+.update-btn {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    font-size: 11px;
+    padding: 0px 5px;
+}
+.disable{
+	background-color: #ccc;
+	pointer-events: none;
+}
+
+.wrapper {
+	width: 980px;
+	margin: auto;
+	background: #c2c2c2;
+}
+.tab-navi ul {
+	list-style: none;
+}
+.tab-navi ul > li {
+	float: left;
+	background: url('../images/navi-devider.png') top right no-repeat;
+
+}
+.tab-navi ul > li > a {
+	color: #000000;
+    display: block;
+    padding: 8px 20px;
+    text-shadow: 0 1px 0 #e5e5e5;
+    text-decoration: none;
+    background: linear-gradient(rgba(0, 0, 0, 0), #afafaf);
+    transition: all 0.4s;
+    outline: none;
+} 
+.tab-navi ul > li > a:active, .tab-navi ul > li > a:focus{
+	outline: none;
+}
+.tab-navi ul > li.active > a {
+	background: linear-gradient(#ffffff, #e5e5e5);
+	cursor: default;
+}
+.tab-navi ul > li:not(.active) > a:hover {
+	background: #afafaf;
+}
+
+.content-wrapper {
+	background-color: #e5e5e5;
+}
+
+.tab-content {
+	/*display: none;*/
+}
+.tab-content.active{
+	display: block;
+}
+.table-data {
+	width: 100%;
+}
+.sorting { 
+	background: url("../images/sort-both.png") bottom right no-repeat;
+	background-position: 95% 15px;
+	cursor: pointer;
+}
+.data-table .tbody {
+	display: table;
+	width: 100%;
+}
+.data-table .tbody .col {
+	display: table-cell;
+}
+.table-data th  {
+	font-size: 16px;
+	font-weight: normal;
+	cursor: pointer;
+}
+.table-data th, .data-table .cell { 
+	padding: 8px 10px;
+	vertical-align: top;
+	border: 1px solid #d8d8d8;
+	text-align: left;
+	min-height: 38px;
+	position: relative;
+}
+.action-col .cell:first-child {
+	min-height: 76px;
+}
+.data-table .input-cell {
+	padding: 0;
+}
+.table-data th input, .data-table .cell input {
+	width: 100%;
+	border: none;
+	padding: 8px 10px;
+	font-size: 14px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.edit-input { display: none;}
+.data-table .cell.active span.content {
+	display: none;
+}
+.data-table .cell.active input.edit-input {
+	display: block;
+}
+
+.table-data thead tr:nth-child(2) th {
+	padding: 0;
+}
+.table-data tbody td a, .data-table .cell a {
+	margin-right: 10px;
+	font-size: 12px;
+	color: inherit;
+}
+.table-data tbody td a:last-child {
+	margin-right: 0;
+}
+.table-data tbody td:first-child {
+	width: 95px;
+}
+.table-data tr:nth-child(odd), .data-table .cell:nth-child(odd) {
+    background-color: #e5e5e5;
+    /*border-bottom: 1px solid #d8d8d8;*/
+}
+.table-data tr:nth-child(even), .data-table .cell:nth-child(even) {
+    background-color: #f0f0f0;
+    /*border-bottom: 1px solid #d8d8d8;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
