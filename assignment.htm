@@ -1,0 +1,47 @@
+<html>
+<head>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+</head>
+<div class="main-container">
+	<div class="nav-row clearfix">
+	 	<ul class="nav-list clearfix">
+	 		<li id="allSaved"><a href="#">All Saved</a></li>
+	 		<li id="sharedSearches"><a href="#">Shared Searches</a></li>
+	 		<li id="mySaved"><a href="#">My Saved</a></li>
+	 		<li id="myRecent"><a href="#">My Recent</a></li>
+	 	</ul>
+	 </div>
+	 <div class="main-template-body">
+		<table id="mainTableBody" class="tbl-field">
+			<thead>
+			 	<tr id="first-field-row">
+			 		<td class="td-field-class td-first-field">Actions</td>
+			 		<td class="td-field-class">Name <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class td-description-field">Description <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class">Owner Name <i class="fa fa-sort sort-icon"></i></td>
+			 		<td class="td-field-class">Read Permissions <i class="fa fa-sort sort-icon"></i></td>
+			 	</tr>
+			 	<tr>
+			 		<td class="td-field-class td-first-field"></td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class td-description-field">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 		<td class="td-input-field-class">
+			 			<input type="text" placeholder="Type Here" class="input-table-field">
+			 		</td>
+			 	</tr>
+			</thead> 		
+			<tbody id="mainDataTable" class="tbl-field"></tbody>
+		</table>
+	 </div>
+</div>
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+<script type="text/javascript" src="javascripts/mainScript.js"></script>
+</html>
