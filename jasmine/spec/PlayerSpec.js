@@ -1,10 +1,3 @@
-describe("mySampleTestSuite", function(){
-  var a = 10;
-  it("check value of a", function(){
-    expect(a).toEqual(1);
-  })
-})
-
 describe("Player", function() {
   var player;
   var song;
