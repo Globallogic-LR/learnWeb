@@ -44,10 +44,10 @@ border-spacing: 0;
 }
 
 /*Reset CSS end*/
+
 .main-container {
     width: 100%;
     border: 1px solid gray;
-    background-color: yellow;
 }
 .navbox{
     border: 1px solid gray;
@@ -57,14 +57,17 @@ border-spacing: 0;
     background-color: red;
     box-sizing:border-box;
 }
-.navbox2-color-class {
+.bg-blue {
     background-color: blue;
 }
-.navbox3-color-class {
+.bg-green {
     background-color: green;
 }
-.navbox4-color-class {
+.bg-purple {
     background-color: purple;
+}
+.bg-yellow{
+    background-color: yellow;
 }
 .clearfix:after {
     content: "";
