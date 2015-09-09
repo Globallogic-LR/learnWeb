@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Test App</title>
+		<link rel="stylesheet" href="vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body ng-app="myApp">
+		<header>
+			<h3>Students board</h3>
+		</header>
+		<div class="container" ng-controller="studentCtrl">
+			<div class="row">
+				<!-- Add students data block-->
+				<div class="col-xs-3 mt-30 student-form">
+					<h3>Add student</h3>
+					<form name="studentForm" novalidate>
+						<div class="form-group">
+							<input required placeholder="Name" type="text" ng-model="student.name" name="studentName" class="form-control"/>
+							<span class="text-danger" ng-show="!studentForm.studentName.$pristine && studentForm.studentName.$error.required">Name can not be blank. </span>
+						</div>
+
+						<div class="form-group">
+							<input ng-model="student.score" required placeholder="Score" min="0" max="100" type="number" name="studentScore" class="form-control"/>
+							<span class="text-danger" ng-show="!studentForm.studentScore.$pristine && studentForm.studentScore.$error.required">Score can not be blank.</span>
+							<span class="text-danger" ng-show="!studentForm.studentScore.$pristine && (studentForm.studentScore.$error.min || studentForm.studentScore.$error.max)">Score can be between 0 to 100</span>
+						</div>
+						<button ng-click="addStudent(studentForm);">Add</button>
+						<div class="clear-both"></div>
+					</form>
+				</div>
+				
+				<div class="summary col-xs-3 pull-right p-0">
+					<h4 class="m-0 text-center">Class Summary</h4>
+					<div class="pl-20 mt-15 pb-10">
+						<div class="mb-10">
+							<span class="bold">Average score:</span>
+							<span ng-bind="performanceData.averageScore"></span>
+						</div>
+						<div class="score-row mb-10">
+							<span>Min score:</span>
+							<span ng-bind="performanceData.minScore"></span>
+						</div>
+						<div class="score-row mb-10">
+							<span>Max score:</span>
+							<span ng-bind="performanceData.maxScore"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+
+			<!--students list block-->
+			<div class="row" ng-if="students.length!=0" id="students-list">
+				<h3 class="pl-15">Students List</h3>
+				<form name="studentsForm">
+					<div class="col-xs-10">
+						<table class="table">
+							<tr>
+								<th>Name</th>
+								<th>Score</th>
+								<th>Actions</th>
+							</tr>
+							<tr class="students-list" ng-class="{'bg-danger':student.score < 65}" ng-repeat="student in students track by $index">
+									<td><input required type="text" ng-model="student.name" ng-blur="updateStudentOnBlur(student.name, studentsForm)" ng-keydown="updateStudentData($event,student.name, studentsForm);"/></td>
+									<td><input required min="0" max="100" type="number" ng-model="student.score" ng-keydown="updateStudentData($event,student.score, studentsForm);" ng-blur="updateStudentOnBlur(student.score, studentsForm)" /></td>
+									<td>
+										<a href="" ng-click="removeStudent($index)">Remove</a>
+									</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--scripts-->
+		<script src="vendor/angular.min.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/services/student-service.js"></script>
+		<script src="app/controllers/student-Controller.js"></script>
+	</body>
+</html>
