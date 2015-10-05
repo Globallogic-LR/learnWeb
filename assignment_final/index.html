@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<title>Angular Assignment</title>
+	<link rel="stylesheet" href="style/style.css"/>
+	<link rel="stylesheet" href="style/bootstrap.min.css"/>
+</head>
+<body data-ng-controller="mainController">
+	<div class="container">
+		<h2>Student Data Summary</h2>
+		<table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th>Student Name</th>
+		        <th colspan="2">Score</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+				<tr data-ng-repeat="std in studentData track by $index" 
+					data-ng-class="{'fail': std.score < failPercentage }">
+					<td>
+						<span  data-ng-hide="option.edit_enable[$index]">{{std.name}}</span>
+						<input data-ng-model="std.name" 
+						       data-ng-show="option.edit_enable[$index]"/>
+					</td>
+					<td>
+						<span  data-ng-hide="option.edit_enable[$index];">{{std.score}}</span>
+						<input data-ng-model="std.score" 
+						       data-ng-show="option.edit_enable[$index]"
+							   data-ng-keyup="keyupAction($event, $index, std.name, std.score)"/>
+					</td>
+					<td>
+						<input title="Edit Row" 
+							   type="button" 
+							   data-ng-click="editRow($index);" 
+							   class="btn btn-info" 
+							   value="Edit"/>
+						<input title="Delete Row" 
+						       type="button" 
+							   data-ng-click="deleteRow($index)"
+							   class="btn btn-warning" 
+							   value="Delete"/>
+					</td>
+				</tr>
+			</tbody>	
+		</table><!-- .table ends-->
+		
+		<form role="form" class="col-xs-5 section">
+			<h2>Enter Student Data</h2>
+			<div class="form-group">
+				<label for="name">Student Name</label>
+				<input data-ng-model="student.name" 
+				       placeholder="Enter Name" 
+					   class="form-control"
+					   id="name"					   
+					   name="name" 
+					   type="text"
+					   required/>
+			</div>
+			<div class="form-group">
+				<label for="score">Student Score</label>
+				<input  data-ng-model="student.score" 
+					    placeholder="Enter Score" 
+						class="form-control" 
+						id="score"
+						name="score" 
+						type="text"
+						required/>
+			</div>
+			<input title="Save Data" 
+				   data-ng-click="saveData(student.name, student.score, 'save')" 
+				   type="submit" 
+				   class="btn btn-success" 
+				   value="Save"/>
+		</form><!-- form ends-->
+		
+		<div class="col-xs-5 col-xs-offset-2 section">
+			<h2> Data Summary </h2>
+			<ul class="list-group">
+				<li class="list-group-item"> 
+					Min Score  : {{showSummary().minScore}}
+				</li>
+				<li class="list-group-item max"> 
+					Max Score  : {{showSummary().maxScore}}
+				</li>
+				<li class="list-group-item"> 
+					Average Score : {{showSummary().avgScore}}
+				</li>
+			</ul>
+		</div><!-- .section ends-->
+	</div><!-- .container ends-->
+		
+	<!-- Scripts -->
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/services/appService.js"></script>
+	<script src="scripts/services/localStorageService.js"></script>
+	<script src="scripts/controller/mainController.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "Student Data assignment",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "phantomjs": "^1.9.18",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-jasmine": "^0.3.6",
+    "angular-mocks": "^1.4.5"
+  },
+  "devDependencies": {
+    "angular": "^1.4.5",
+    "coffee-script": "^1.10.0",
+    "karma-cli": "^0.1.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-phantomjs-launcher": "^0.2.1"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "Diljohn Singh",
+  "license": "ISC"
+}
